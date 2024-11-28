@@ -21,9 +21,9 @@ app.post('/', (req, res) => {
 });
 
 // Configuración para apuntar a los archivos estáticos de Angular
-app.use('/', express.static('client/dist/client', { redirect: false }));
+app.use('/', express.static('client/dist/', { redirect: false }));
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve('client/dist/client/index.html'));
+    res.sendFile(path.resolve('client/dist/index.html'));
 });
 
 /* ====================================================== */
