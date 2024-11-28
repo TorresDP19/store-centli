@@ -59,11 +59,11 @@ function RegisterAccount(req, res) {
                     res.status(500).send({ERROR: error.details[0].message});
                 } else {
                     console.log("---> Validación correcta de datos");
-                    let users;
+                    let users = new users_model(usersValue);
                     users.save((errSave, usersStored) => {
                         if(errSave) {
                             console.log("---> ERROR: El correo ingresado ya está en uso");
-                            res.status(500).send({ERROR: 'El correo electronico que ingresaste ya esta en uso.'});
+                            res.status(500).send({ERROR: 'El correo electronico que ingresaste ya esta en uso.'}, errSave);
                         } else {
                             if(!usersStored) {
                                 console.log("---> ERROR: Ha ocurrido un error, por favor intente más tarde.");
