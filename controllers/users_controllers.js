@@ -63,7 +63,7 @@ function RegisterAccount(req, res) {
                     users.save((errSave, usersStored) => {
                         if(errSave) {
                             console.log("---> ERROR: El correo ingresado ya está en uso");
-                            res.status(500).send({ERROR: 'El correo electronico que ingresaste ya esta en uso.'}, errSave);
+                            res.status(500).send({ERROR: errSave});
                         } else {
                             if(!usersStored) {
                                 console.log("---> ERROR: Ha ocurrido un error, por favor intente más tarde.");
