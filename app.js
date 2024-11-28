@@ -7,10 +7,17 @@ const
     morgan = require ('morgan'),
     mongoose = require ('mongoose'),
     bodyParser = require ('body-parser'),
-    path = require ('path');
+    path = require ('path'),
+    cors = require('cors');
 ;
 
 /* ====================================================== */
+// Configura CORS
+app.use(cors({
+    origin: '*', // Permitir todas las solicitudes. Cambia esto para restringirlo a dominios específicos.
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Authorization', 'X-API-KEY', 'Origin', 'X-Requested-With', 'Content-Type', 'Accept']
+}));
 
 
 app.use(bodyParser.json());
