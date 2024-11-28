@@ -32,6 +32,8 @@ function RegisterAccount(req, res) {
         params.expiration_date
     ) {
 
+        console.log('paramas', params);
+        
         if(params.password) {
 
             bcrypt.hash(params.password, null, null, function(err, hash){
