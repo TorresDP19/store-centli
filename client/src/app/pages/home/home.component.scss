@@ -1,0 +1,857 @@
+@import '../../styles/_index.scss';
+
+.Home {
+    .FirstSection {
+        background: #D9F2EE;
+        padding-bottom: 3em;
+        img {
+            padding: 4.0em 0 .9em 0;
+            display: block;
+            margin: auto;
+            width: 20%;
+        }
+        h1 {
+            padding-top: .2em;
+            font-family: $Montserrat;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 3.6em;
+            color: #0E6152;
+        }
+        h4 {
+            font-size: 1em;
+            font-family: $Montserrat;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FF395B;
+        }
+    }
+    .TwoSection {
+        padding-top: 2.5em;
+        padding-bottom: 2em;
+        h2 {
+            width: 30%;
+            font-family: $Poppins;
+            font-size: 1.2em;
+            color: black;
+            position: relative;
+            top: 8px;
+        }
+        form {
+            width: 60%;
+            input {
+                width: 45%;
+                border-radius: 5px;
+                border: 2px solid $border-input;
+                font-family: $Poppins;
+                text-align: center;
+                &::placeholder {
+                    text-align: center;
+                }
+            }
+            button {
+                background: #FFC107;
+                color: black;
+                box-shadow: $shadow-btn;
+                transition: 380ms;
+                text-transform: uppercase;
+                font-size: .85em;
+                font-weight: 600;
+                &:hover {
+                    transition: 380ms ease-in;
+                    box-shadow: 0px 13px 24px -7px $grey-700;
+                }
+            }
+        }
+    }
+    .ThirdSection {
+        background-color:#0E6152;
+        padding-top: 2em;
+        .all-THS {
+            display: flex;
+            justify-content: center;
+            .img-lg {
+                img {
+                    box-shadow: $shadow-small;
+                    border-radius: 5px;
+                    display: block;
+                    margin: 1.3em auto;
+                    width: 95%;
+                    max-width: 845px;
+                }
+            }
+            .img-sm {
+                width: 40%;
+                img {
+                    box-shadow: $shadow-small;
+                    display: block;
+                    margin: 1.3em auto;
+                    border-radius: 5px;
+                    width: 60%;
+                }
+            }
+        }
+    }
+    .FourSection {
+        
+        background: #FFC107;
+        padding-top: 5em;
+        padding-bottom: 2.5em;
+        .info-course {
+            padding-top: 2em;
+            .image {
+                width: 30%;
+                img {
+                    display: block;
+                    margin: auto;
+                    width: 70%;
+                    border-radius: 10px;
+                    box-shadow: 0px 13px 24px -7px rgb(160, 155, 155);
+                }
+            }
+            .text {
+                width: 60%;
+                h3 {
+                    padding-top: 1.2em;
+                    font-family: $Poppins;
+                    font-weight: 600;
+                    font-size: 1.5em;
+                    color: #0E6253;
+                }
+                hr {
+                    margin: initial;
+                }
+                p {
+                    padding-top: .5em;
+                    font-family: $Poppins;
+                    font-size: .95em;
+                    text-align: justify;
+                    color: black;
+                }
+            }
+        }
+        a.btn-courses {
+            background: #0E6253;
+            padding: 10px 10px;
+            border: 1px solid #0E6253;
+            text-transform: uppercase;
+            width: 15%;
+            display: block;
+            margin: 2em auto;
+            font-family: $Poppins;
+            font-weight: 500;
+            transition: 380ms ease-in;
+            color: white;
+            &:hover{
+                background: #0E6253;
+                color: $white;
+                transition: 380ms ease-in;
+                box-shadow: 0px 13px 24px -7px #0E6253;
+            }
+        }
+    }
+    .FiveSection {
+        h2 {
+            padding-top: 1em;
+            font-family: $Montserrat;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: black;
+            text-align: center;
+        }
+        .product-info {
+            background: #FFC107;
+            width: 65%;
+            margin: 3em auto;
+            border-radius: 10px;
+            box-shadow: 0px 13px 24px -7px rgb(242, 240, 240);
+            .image {
+                width: 40%;
+                img {
+                    width: 85%;
+                }
+            }
+            .text {
+                width:100%;
+                h3 {
+                    padding-top: .85em;
+                    font-family: $Montserrat;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: #0E6253;
+                    font-size: 1.5em;
+                }
+                h4 {
+                    font-family: $Poppins;
+                    color: black;
+                    font-size: 1.15em;
+                    padding-top: .5em;
+                }
+                p {
+                    padding-top: .5em;
+                    text-align: justify;
+                    font-family: $Poppins;
+                    font-weight: 400;
+                    color: black;
+                }
+            }
+        }
+        a.btn-courses {
+            padding: 8px;
+            background-color: #0E6152;
+            border: 1px solid #0E6253;
+            text-transform: uppercase;
+            width: 20%;
+            display: block;
+            margin: 2em auto;
+            font-family: $Poppins;
+            font-weight: 500;
+            transition: 380ms ease-in;
+            color: white;
+            &:hover{
+                background: #0E6253;
+                color: #FFC107;
+                transition: 380ms ease-in;
+                box-shadow: 0px 13px 24px -7px #29323d;
+            }
+        }
+    }
+    .SixSection {
+        background-color:#D9F2EE;;
+        padding-top: 5em;
+        padding-bottom: 5em;
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%51260E' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        }
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%51260E' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        }
+        h3 {
+            text-align: center;
+            padding-top: 3em;
+            padding-bottom: 2em;
+            color: black;
+            font-family: $Montserrat;
+            font-weight: 400;
+            text-transform: uppercase;
+            span {
+                font-weight: 500;
+            }
+        }
+        .carousel-item {
+            .cards-products {
+                .card {
+                    margin-bottom: 3em;
+                    box-shadow: 0px 13px 24px -7px #c4c4c4;
+                    width: 20%;
+                    margin: 40px;
+                    img {
+                        height: 100%;
+                        max-height: 240px;
+                        width: 100%;
+                    }
+                    .card-body {
+                        font-family: $Poppins;
+                        font-weight: 400;
+                        text-align: center;
+                        color: #0E6152;
+                        padding-top: 1em;
+                        padding-bottom: 1.5em;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+    .SevenSection {
+        margin-top: 4em;
+        background-color:#0E6152;
+        h3 {
+            padding-top: 2.5em;
+            font-family: $Montserrat;
+            text-align: center;
+            font-weight: 500;
+            color: white;
+        }
+        p {
+            padding-top: .8em;
+            font-family: $Poppins;
+            font-weight: 300;
+            text-align: center;
+            color: white;
+            width: 50%;
+            margin: auto;
+        }
+        .contact {
+            padding-top: 2em;
+            padding-bottom: 4em;
+            input {
+                border-radius: 4px;
+                width: 25%;
+                border-radius: 5px;
+                border: 2px solid $border-input;
+                font-family: $Poppins;
+                text-align: left;
+                &::placeholder {
+                    text-align: left;
+                }
+            }
+            button {
+                margin-left: 2em;
+                background: #FFC107;
+                color: black;
+                box-shadow: $shadow-btn;
+                transition: 380ms;
+                text-transform: uppercase;
+                font-size: .85em;
+                font-weight: 600;
+                &:hover {
+                    transition: 380ms ease-in;
+                    box-shadow: 0px 13px 24px -7px $grey-700;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 425px) {
+    .Home {
+        .FirstSection {
+            img {
+                width: 40%;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        .TwoSection {
+            .all-TS {
+                text-align: center;
+                h2 {
+                    margin: auto;
+                    width: 90%;
+                }
+                form {
+                    width: 100%;
+                    input {
+                        margin: 2em auto 2em auto;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+        .ThirdSection {
+            display: block;
+            .all-THS {
+                display: block;
+                .img-lg {
+                    width: 100%;
+                }
+                .img-sm {
+                    width: 100%;
+                    img {
+                        width: 85%;
+                    }
+                }
+            }
+        }
+        .FourSection {
+            .info-course {
+                padding-top: 4em;
+                padding-bottom: 4em;
+                .image {
+                    width: 100%;
+                }
+                .text {
+                    width: 100%;
+                    h3 {
+                        text-align: center;
+                        .visible-sm {
+                            display: block;
+                        }
+                    }
+                    hr {
+                        margin: auto;
+                        width: 65%;
+                    }
+                    p {
+                        width: 90%;
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 50%!important;
+            }
+        }
+        .FiveSection {
+            .product-info {
+                width: 90%;
+                .image {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .text {
+                    padding-bottom: 2em;
+                    width: 100%;
+                    text-align: center;
+                    p {
+                        width: 90%;
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 70%;
+            }
+        }
+        .SixSection {
+            h3 {
+                width: 90%;
+                margin: auto;
+            }
+            .carousel-item {
+                .cards-products {
+                    .card {
+                        width: 70%;
+                        margin: 2.5em auto;
+                    }
+                }
+            }
+        }
+        .SevenSection {
+            p {
+                width: 90%;
+            }
+            .contact {
+                input {
+                    width: 85%;
+                    margin: auto;
+                }
+                button {
+                    display: block;
+                    margin: 1.4em auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 600px) {
+    .Home {
+        .FirstSection {
+            img {
+                width: 40%;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        .TwoSection {
+            .all-TS {
+                text-align: center;
+                h2 {
+                    margin: auto;
+                    width: 90%;
+                }
+                form {
+                    width: 100%;
+                    input {
+                        margin: 2em auto 2em auto;
+                        width: 70%;
+                    }
+                }
+            }
+        }
+        .ThirdSection {
+            display: block;
+            .all-THS {
+                display: block;
+                .img-lg {
+                    width: 100%;
+                }
+                .img-sm {
+                    width: 100%;
+                    img {
+                        width: 85%;
+                    }
+                }
+            }
+        }
+        .FourSection {
+            .info-course {
+                padding-top: 4em;
+                padding-bottom: 4em;
+                .image {
+                    width: 100%;
+                }
+                .text {
+                    width: 100%;
+                    h3 {
+                        text-align: center;
+                        .visible-sm {
+                            display: block;
+                        }
+                    }
+                    hr {
+                        margin: auto;
+                        width: 65%;
+                    }
+                    p {
+                        width: 90%;
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 50%!important;
+            }
+        }
+        .FiveSection {
+            .product-info {
+                width: 75%;
+                .image {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .text {
+                    padding-bottom: 2em;
+                    width: 100%;
+                    text-align: center;
+                    p {
+                        width: 90%;
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 70%;
+            }
+        }
+        .SixSection {
+            h3 {
+                width: 90%;
+                margin: auto;
+            }
+            .carousel-item {
+                .cards-products {
+                    .card {
+                        width: 70%;
+                        margin: 2.5em auto;
+                    }
+                }
+            }
+        }
+        .SevenSection {
+            h3 {
+                width: 85%;
+                margin: auto;
+            }
+            p {
+                width: 90%;
+            }
+            .contact {
+                input {
+                    width: 85%;
+                    margin: auto;
+                }
+                button {
+                    display: block;
+                    margin: 1.4em auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 767px) {
+    .Home {
+        .FirstSection {
+            img {
+                width: 40%;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        .TwoSection {
+            .all-TS {
+                text-align: center;
+                h2 {
+                    margin: auto;
+                    width: 90%;
+                }
+                form {
+                    width: 100%;
+                    input {
+                        margin: 2em auto 2em auto;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+        .ThirdSection {
+            display: block;
+            .all-THS {
+                display: block;
+                .img-lg {
+                    width: 100%;
+                }
+                .img-sm {
+                    width: 100%;
+                    img {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+        .FourSection {
+            .info-course {
+                padding-top: 4em;
+                padding-bottom: 4em;
+                .image {
+                    display: block;
+                    margin: auto;
+                    width: 75%;
+                }
+                .text {
+                    width: 100%;
+                    h3 {
+                        text-align: center;
+                        .visible-sm {
+                            display: block;
+                        }
+                    }
+                    hr {
+                        margin: auto;
+                        width: 65%;
+                    }
+                    p {
+                        width: 75%;
+                        margin: .5em auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 30%!important;
+            }
+        }
+        .FiveSection {
+            .product-info {
+                width: 55%;
+                .image {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .text {
+                    padding-bottom: 2em;
+                    width: 100%;
+                    text-align: center;
+                    p {
+                        width: 90%;
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 45%;
+            }
+        }
+        .SixSection {
+            h3 {
+                width: 90%;
+                margin: auto;
+            }
+            .carousel-item {
+                .cards-products {
+                    .card {
+                        width: 50%;
+                        margin: 2.5em auto;
+                    }
+                }
+            }
+        }
+        .SevenSection {
+            h3 {
+                width: 85%;
+                margin: auto;
+            }
+            p {
+                width: 90%;
+            }
+            .contact {
+                input {
+                    width: 50%;
+                    margin: auto;
+                    &::placeholder {
+                        text-align: center;
+                    }
+                }
+                button {
+                    display: block;
+                    margin: 1.6em auto;
+                }
+            }
+        }
+    }
+} 
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .Home {
+        .FirstSection {
+            img {
+                width: 40%;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        .TwoSection {
+            .all-TS {
+                text-align: center;
+                h2 {
+                    margin: auto;
+                    width: 90%;
+                }
+                form {
+                    width: 100%;
+                    input {
+                        margin: 2em auto 2em auto;
+                        width: 40%;
+                    }
+                }
+            }
+        }
+        .ThirdSection {
+            display: block;
+            .all-THS {
+                display: block;
+                .img-lg {
+                    display: block;
+                    margin: auto;
+                    width: 90%;
+                }
+                .img-sm {
+                    width: 100%;
+                    img {
+                        width: 65%;
+                    }
+                }
+            }
+        }
+        .FourSection {
+            .info-course {
+                padding-top: 4em;
+                padding-bottom: 4em;
+                .image {
+                    display: block;
+                    margin: auto;
+                    width: 60%;
+                }
+                .text {
+                    width: 100%;
+                    h3 {
+                        text-align: center;
+                        .visible-sm {
+                            display: block;
+                        }
+                    }
+                    hr {
+                        margin: auto;
+                        width: 65%;
+                    }
+                    p {
+                        width: 70%;
+                        margin: .5em auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 25%!important;
+            }
+        }
+        .FiveSection {
+            .product-info {
+                width: 35%;
+                .image {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .text {
+                    padding-bottom: 2em;
+                    width: 100%;
+                    text-align: center;
+                    p {
+                        width: 90%;
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+            a.btn-courses {
+                width: 35%;
+            }
+        }
+        .SixSection {
+            h3 {
+                width: 90%;
+                margin: auto;
+            }
+            .carousel-item {
+                .cards-products {
+                    .card {
+                        width: 30%;
+                        margin: 2.5em auto;
+                    }
+                }
+            }
+        }
+        .SevenSection {
+            h3 {
+                width: 85%;
+                margin: auto;
+            }
+            p {
+                width: 90%;
+            }
+            .contact {
+                input {
+                    width: 40%;
+                    margin: auto;
+                    &::placeholder {
+                        text-align: center;
+                    }
+                }
+                button {
+                    display: block;
+                    margin: 1.6em auto;
+                }
+            }
+        }
+    }
+} 
+
+@media screen and (min-width: 992px) and (max-width: 1306px) {
+    .FourSection {
+        a.btn-courses {
+            width: 25%!important;
+        }
+    }
+}

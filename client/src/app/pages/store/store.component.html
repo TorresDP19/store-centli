@@ -1,0 +1,99 @@
+<div *ngIf="identity">
+    <div>
+        <app-navbar-store></app-navbar-store>
+        <div class="TwoSection pt-5 d-lg-flex justify-content-around">
+            <h3 data-aos="fade-down">Productos disponibles en nuestra tienda</h3>
+            <div class="form-group" data-aos="fade-down">
+                <input
+                    class="form-control"
+                    type="text"
+                    name="search"
+                    spellcheck="false"
+                    id="search"
+                    [(ngModel)]="searchTerm"
+                    placeholder="Escribe el producto que buscas..."
+                /> 
+                <img src="../../../assets/svg/Search.svg" alt="Search Icon" />
+            </div>
+        </div>
+        <div class="ThirdSection">
+            <p class="item-not-found" *ngIf="!(products | productFilter:searchTerm)?.length"><span><strong>No se han encontrado resultados.</strong></span><span class="info-item">No podemos encontrar ningún artículo que coincida con su búsqueda<br> o actualmente no hay productos disponibles.</span> <span>\(o_o)/</span> </p>
+            <div class="container">
+                <div class="row justify-content-around">
+                    <a 
+                        [routerLink]="['product/', product._id]" 
+                        routerLinkActive="router-link-active" 
+                        class="product p-3 mt-5 text-none rounded" 
+                        *ngFor="let product of products | productFilter:searchTerm"
+                        data-aos="fade-down"
+                    >
+                        <div class="image">
+                            <img src="{{ url + '/get-image-product/' + product.image}}" alt="image" class="rounded img-fluid" />
+                        </div>
+                        <hr>
+                        <div class="text">
+                            <h4 class="__name">{{product.productName}}</h4>
+                            <h4 class="__price">$ {{product.price}} MX</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a [routerLink]="['cart']" routerLinkActive="router-link-active" class="btn-cart">
+            <div>
+                <img src="../../../assets/svg/Shopping Cart.svg" alt="cart" class="img-fluid" />
+            </div>
+        </a>
+        <a [routerLink]="['add-product']" routerLinkActive="router-link-active" class="btn-add">
+            <div>
+                <img src="../../../assets/svg/addC.svg" alt="cart" class="img-fluid" />
+            </div>
+        </a>
+        <app-footer-store></app-footer-store>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <div>
+        <app-navbar-store></app-navbar-store>
+        <div class="TwoSection pt-5 d-lg-flex justify-content-around">
+            <h3>Productos disponibles en nuestra tienda</h3>
+            <div class="form-group">
+                <input
+                    class="form-control"
+                    type="text"
+                    name="search"
+                    spellcheck="false"
+                    id="search"
+                    [(ngModel)]="searchTerm"
+                    placeholder="Escribe el producto que buscas..."
+                /> 
+                <img src="../../../assets/svg/Search.svg" alt="Search Icon" />
+            </div>
+        </div>
+        <div class="ThirdSection">
+            <p class="item-not-found" *ngIf="!(products | productFilter:searchTerm)?.length"><span><strong>No se han encontrado resultados.</strong></span><span class="info-item">No podemos encontrar ningún artículo que coincida con su búsqueda<br> o actualmente no hay productos disponibles.</span> <span>\(o_o)/</span> </p>
+            <div class="container">
+                <div class="row justify-content-around">
+                    <a 
+                        [routerLink]="['product/', product._id]" 
+                        routerLinkActive="router-link-active" 
+                        class="product p-3 mt-5 rounded text-none rounded" 
+                        *ngFor="let product of products | productFilter:searchTerm"
+                        data-aos="fade-down"
+                    >
+                        <div class="image">
+                            <img src="{{ url + '/get-image-product/' + product.image}}" alt="image" class="rounded img-fluid" />
+                        </div>
+                        <hr>
+                        <div class="text">
+                            <h4 class="__name">{{product.productName}}</h4>
+                            <h4 class="__price">$ {{product.price}} MX</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <app-footer-store></app-footer-store>
+    </div>
+</div>

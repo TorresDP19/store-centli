@@ -1,0 +1,85 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection pt-3">
+        <div class="text">
+            <h2>Añadir un nuevo video</h2>
+            <p class="text-danger">* Por favor complete todos los campos para crear el PDF con exito *</p>
+            <hr width="45%">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="col-12 col-sm-8 col-md-6 col-lg-4 d-block m-auto">
+                <div>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/pdf_name.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="namePDF"
+                        id="namePDF"
+                        placeholder="Nombre del PDF"
+                        class="form-control namePDF"
+                        #namePDF="ngModel"
+                        required
+                        [(ngModel)]="pdfs.namePDF"
+                        [class.is-invalid]="namePDF.touched && namePDF.invalid"
+                    >
+                    <span class="text-danger" *ngIf="namePDF.errors?.required && namePDF.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/number.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="number"
+                        id="number"
+                        placeholder="Número del PDF"
+                        class="form-control number"
+                        #number="ngModel"
+                        required
+                        [(ngModel)]="pdfs.number"
+                        [class.is-invalid]="number.touched && number.invalid"
+                    >
+                    <span class="text-danger" *ngIf="number.errors?.required && number.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/video_content.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="content"
+                        id="content"
+                        placeholder="ID del contenido"
+                        class="form-control nameVideo"
+                        #content="ngModel"
+                        required
+                        [(ngModel)]="pdfs.content"
+                        [class.is-invalid]="content.touched && content.invalid"
+                    >
+                    <span class="text-danger" *ngIf="content.errors?.required && content.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/pdf_files.svg" alt="Icon" width="30px" />                      
+                        <input 
+                            type="file"
+                            name="files"
+                            id="files"
+                            placeholder="PDF"
+                            class="form-control image"
+                            (change)="fileChangeEvent($event);"
+                        />
+                    </p>
+                    <button type="submit" class="btn btn-response d-block waves-effect waves-ripple" [disabled]="!f.valid">
+                        Añadir PDF
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="response">
+            <h3>Respuesta del servidor</h3>
+            <div *ngIf="alertMessage">
+                <div class="alert alert-primary w-50 d-block m-auto text-center">
+                    {{alertMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <app-learning-home></app-learning-home>
+</div>

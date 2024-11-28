@@ -1,0 +1,29 @@
+<div class="invoice-request mt-4">
+    <h5 class="text-center">Solicitar Factura</h5>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <label for="rfc">RFC:</label>
+            <input type="text" id="rfc" class="form-control" placeholder="Ingresa tu RFC" [(ngModel)]="invoiceData.rfc">
+        </div>
+        <div class="col-12 mt-2">
+            <label for="razonSocial">Razón Social:</label>
+            <input type="text" id="razonSocial" class="form-control" placeholder="Ingresa tu razón social" [(ngModel)]="invoiceData.razonSocial">
+        </div>
+        <div class="col-12 mt-2">
+            <label for="direccionFiscal">Dirección Fiscal:</label>
+            <input type="text" id="direccionFiscal" class="form-control" placeholder="Ingresa tu dirección fiscal" [(ngModel)]="invoiceData.direccionFiscal">
+        </div>
+        <div class="col-12 mt-2">
+            <label for="emailFactura">Correo Electrónico para Factura:</label>
+            <input type="email" id="emailFactura" class="form-control" placeholder="Ingresa tu correo" [(ngModel)]="invoiceData.emailFactura">
+        </div>
+        <div class="col-12 mt-3">
+            <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="invoiceData.deseaFactura" /> ¿Deseas recibir factura?
+            </label>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-info btn-sm mt-3" (click)="submitInvoiceData()">Enviar Datos para Factura</button>

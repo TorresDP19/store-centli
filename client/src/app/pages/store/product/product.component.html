@@ -1,0 +1,119 @@
+<app-navbar-store></app-navbar-store>
+
+<div *ngIf="identity">
+    <div class="FirstSection" *ngIf="products">
+        <div class="container">
+            <div class="row justify-content-lg-around">
+                <div class="text col-sm-12 col-md-12 col-md-10 col-lg-6 col-xl-6 col-12" data-aos="fade-down">
+                    <h3>{{products.productName}}</h3>
+                    <hr>
+                    <h4>ID del producto: <span>{{products._id}}</span></h4>
+                    <h4>Marca: <span>{{products.brand}}</span></h4>
+                    <h4>Material del producto: <span>{{products.material}}</span></h4>
+                    <h4 class="price">$ {{products.price}} MX</h4>
+                    <div class="col-2">
+                        <input class="w-100" disabled type="hidden" min="1" value="1" />
+                    </div>
+                    <button class="btn waves-effect waves-ripple" (click)="addToCart(products)"><img src="../../../../assets/svg/buy.svg">Agregar al carrito</button>            
+
+                    <div class="actions d-lg-flex justify-content-lg-start" *ngIf="identity.role == 'ROLE_ADMIN'">
+                        <a class="btn btn-edit waves-effect waves-ripple" (click)="onUpdateConfirm(products._id)">
+                            <img src="../../../../assets/svg/tags.svg" alt="Logo" />
+                            Editar producto
+                        </a>
+                        <a class="btn btn-delete waves-effect waves-ripple" (click)="onDeleteConfirm(products._id)">
+                            <img src="../../../../assets/svg/trash.svg" alt="Logo" />
+                            Eliminar este producto
+                        </a>
+                    </div>
+                    
+                    <div class="secure" *ngIf="confirm == products._id">
+                        <p>¿Estas seguro de eliminar este producto?</p>
+                        <div class="buttons d-lg-flex justify-content-lg-around">
+                            <a class="btn btn-cancel btn-primary waves-effect waves-ripple" (click)="onCancelProduct()">
+                                No, cancelar esta acción
+                            </a>
+                            <a class="btn btn-deletes btn-danger waves-effect waves-ripple" (click)="onDeleteProduct(products._id)">
+                                Sí, eliminar definitivamente
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="secure-update" *ngIf="update == products._id">
+                        <p>Modificar producto</p>
+                        <form (ngSubmit)="onUpdateProduct(products._id)" #f="ngForm">
+                            <p>
+                                <input type="text" class="form-control" name="productName" id="" value="{{products.productName}}" #productName="ngModel" [(ngModel)]="products.productName">
+                            </p>
+                            <p>
+                                <input type="text" class="form-control" name="brand" id="" value="{{products.brand}}" #brand="ngModel" [(ngModel)]="products.brand">
+                            </p>
+                            <p>
+                                <input type="text" class="form-control" name="price" id="" value="{{products.price}}" #price="ngModel" [(ngModel)]="products.price">
+                            </p>
+                            <p>
+                                <textarea class="form-control" name="description" value="{{products.description}}" #description="ngModel" [(ngModel)]="products.description"></textarea>
+                            </p>
+                            <p>
+                                <input type="text" class="form-control" name="material" value=" {{products.material}}" #material="ngModel" [(ngModel)]="products.material">
+                            </p>
+                            <p>
+                                <input type="file" class="form-control" name="image" id="" (change)="fileChangeEvent($event)">
+                            </p>
+    
+                            <div class="actions d-lg-flex justify-content-lg-around">
+                                <button type="reset" class="btn waves-effect waves-ripple" (click)="onUpdateCancel()">Cancelar acción</button>
+                                <button type="submit" class="btn waves-effect waves-ripple">Actualizar producto</button>
+                            </div>
+    
+                        </form>
+                    </div>
+
+                </div>
+                <div class="image col-sm-12 col-md-12 col-md-10 col-lg-6 col-xl-6 col-12" data-aos="fade-down">
+                    <img src="{{url + '/get-image-product/' + products.image}}"  class="rounded">
+                </div>
+            </div>
+        </div>
+        <div class="TwoSection container">
+            <div class="description">
+                <h3>Descripción del producto</h3>
+                <hr width="100%"/>
+                <p [innerHtml]="products.description"></p>
+            </div>
+        </div>
+    </div>
+    <a href="store/cart" class="btn-cart">
+        <div>
+            <img src="../../../assets/svg/Shopping Cart.svg" alt="cart" class="img-fluid" />
+        </div>
+    </a>
+</div>
+
+<div *ngIf="identity == null">
+    <div class="FirstSection" *ngIf="products">
+        <div class="container">
+            <div class="row justify-content-lg-around">
+                <div class="text col-sm-12 col-md-12 col-md-10 col-lg-6 col-xl-6 col-12">
+                    <h3>{{products.productName}}</h3>
+                    <hr>
+                    <h4>ID del producto: <span>{{products._id}}</span></h4>
+                    <h4>Marca: <span>{{products.brand}}</span></h4>
+                    <h4>Material del producto: <span>{{products.material}}</span></h4>
+                    <h4 class="price">$ {{products.price}} MX</h4>
+                    <button class="btn waves-effect waves-ripple" (click)="login();"><img src="../../../../assets/svg/buy.svg">Agregar al carrito</button>            
+                </div>
+                <div class="image col-sm-12 col-md-12 col-md-10 col-lg-6 col-xl-6 col-12">
+                    <img src="{{url + '/get-image-product/' + products.image}}" class="rounded">
+                </div>
+            </div>
+        </div>
+        <div class="TwoSection container" data-aos="fade-down">
+            <div class="description">
+                <h3>Descripción del producto</h3>
+                <hr width="100%"/>
+                <p [innerHtml]="products.description"></p>
+            </div>
+        </div>
+    </div>
+</div>

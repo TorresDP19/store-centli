@@ -1,0 +1,59 @@
+
+$bar-width: 25px;
+$bar-height: 3.1px;
+$bar-spacing: 7px;
+
+$Montserrat: 'Montserrat', sans-serif;
+$Mulish: 'Mulish', sans-serif;
+$Poppins: 'Poppins', sans-serif;
+
+$border-input: #c9d3dd;
+
+$shadow-nav: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+$shadow-btn: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+$shadow-small: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+$shadow-container-small: 0 10px 20px 0 rgb(0 0 0 / 5%);
+$shadow-container: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+$shadow-nav-small: 0 2px 30px 0 rgb(207 207 207 / 50%);
+
+$primary-color: #0E6152;
+$grey-800: #424242;
+$grey-700: #29323d;
+$grey-600: #798da3;
+$grey-500: #0E6152;
+$grey-400: #9fafc1;
+$grey-300: #333333;
+$grey-200: #4d4d4d;
+$grey-100: #666666;
+$pink-first: #e1d9d5;
+$white: #fff;
+$white-2: #edf0f4;
+
+$black-800: #000;
+$black-700: #141414;
+$black-600: #1b1b1b;
+$black-500: #0E6152;
+
+
+.visible-sm {
+    display: none;
+}
+
+.shadow-nav {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.shadow-small {
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+}
+
+.text-none {
+    text-decoration: none!important;
+    &:hover {
+        text-decoration: none!important;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}

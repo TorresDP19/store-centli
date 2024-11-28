@@ -1,0 +1,123 @@
+<div *ngIf="identity">
+    <div *ngIf="identity.role == 'ROLE_ADMIN'">
+        <app-navbar-store></app-navbar-store>
+        <div class="FirstSection pt-3">
+            <div class="text">
+                <h3>Añadir un nuevo producto</h3>
+                <hr width="75%">
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="d-block m-auto col-12 col-sm-8 col-md-6 col-lg-5">
+                    <div>
+                        <p class="col-12">
+                            <img src="../../../../assets/svg/productForm.svg" alt="Icon Form" />
+                            <input 
+                                type="text"
+                                name="productName"
+                                id="productName"
+                                placeholder="Nombre del producto"
+                                class="form-control productName"
+                                #productName="ngModel"
+                                required
+                                [(ngModel)]="products.productName"
+                                [class.is-invalid]="productName.touched && productName.invalid"
+                            />
+                            <span class="text-danger" *ngIf="productName.errors?.required && productName.touched">!</span>     
+                        </p>
+                        <p class="col-12">
+                            <img src="../../../../assets/svg/product_documentsForm.svg" alt="Icon Form" />
+                            <input 
+                                type="text"
+                                name="brand"
+                                id="brand"
+                                placeholder="Nombre de la marca del producto"
+                                class="form-control brand"
+                                #brand="ngModel"
+                                required
+                                [(ngModel)]="products.brand"
+                                [class.is-invalid]="brand.touched && brand.invalid"
+                            />
+                            <span class="text-danger" *ngIf="brand.errors?.required && brand.touched">!</span>     
+                        </p>
+                        <p class="col-12">
+                            <img src="../../../../assets/svg/PriceTagForm.svg" alt="Icon Form" />
+                            <input 
+                                type="text"
+                                name="price"
+                                id="price"
+                                placeholder="Precio del producto"
+                                class="form-control price"
+                                #price="ngModel"
+                                required
+                                [(ngModel)]="products.price"
+                                [class.is-invalid]="price.touched && price.invalid"
+                            />
+                            <span class="text-danger" *ngIf="price.errors?.required && price.touched">!</span>     
+                        </p>
+                        <p class="col-12">
+                            <img src="../../../../assets/svg/more_detailsForm.svg" alt="Icon Form" />
+                            <textarea
+                            placeholder="Descripción del producto"
+                            name="description"
+                            id="description"
+                            class="description form-control"
+                            #description="ngModel"
+                            required
+                            [(ngModel)]="products.description"
+                            [class.is-invalid]="description.touched && description.invalid"
+                            >
+                            </textarea>
+                            <span class="text-danger" *ngIf="description.errors?.required && description.touched">!</span> 
+                        </p>
+                        <p class="col-12">
+                            <img src="../../../../assets/svg/spachelor.svg" alt="Icon Form" />
+                            <input 
+                                type="text"
+                                name="material"
+                                id="material"
+                                placeholder="Material del producto"
+                                class="form-control material"
+                                #material="ngModel"
+                                required
+                                [(ngModel)]="products.material"
+                                [class.is-invalid]="material.touched && material.invalid"
+                            />
+                            <span class="text-danger" *ngIf="material.errors?.required && material.touched">!</span>     
+                        </p>
+                        <p class="col-12">
+                            <img src="../../../../assets/svg/imageForm.svg" alt="Icon Form" />                        
+                            <input 
+                                type="file"
+                                name="image"
+                                id="image"
+                                placeholder="Imagen del producto"
+                                class="form-control image"
+                                (change)="fileChangeEvent($event);"
+                            />
+                        </p>
+
+                        <button type="submit" class="btn btn-response d-block" [disabled]="!f.valid">
+                            Añadir producto
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="message rounded">
+                <h3>Respuesta del servidor:</h3>
+                <div *ngIf="alertMessage">
+                    <div class="alert alert-primary w-50">
+                        {{alertMessage}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="identity.role == 'ROLE_USER'">
+        <div class="alert alert-primary">
+            You are not admin in this platform.
+        </div>        
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <app-store></app-store>
+</div>

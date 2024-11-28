@@ -1,0 +1,66 @@
+<!-- src/app/components/tutorial/tutorial.component.html -->
+<header>
+    <div class="header-content">
+      <h1>Centli <a class="nav-link ml-2 text-uppercase" href="/home" data-aos="fade-right">Cursos</a></h1>
+    </div>
+  </header>
+  
+  <div *ngFor="let contenedor of contenedores; let i = index" class="Contenedor" [ngClass]="{ 'visible': i === indiceActual }" [id]="contenedor">
+    <h1>{{ obtenerTitulo(i) }}</h1>
+  
+    <!-- Contenedor 1: Registro -->
+    <h2 *ngIf="i === 0">Registrarse en Centli</h2>
+    <img *ngIf="i === 0" class="Img" src="assets/Imagenes/registrouno.png" alt="Registro">
+  
+    <!-- Contenedor 2: Iniciar Sesión -->
+    <h2 *ngIf="i === 1">Iniciar Sesión</h2>
+    <img *ngIf="i === 1" class="Img" src="assets/Imagenes/iniciarsesiondos.png" alt="Iniciar Sesión">
+  
+    <!-- Contenedor 3: Carrito de Compras -->
+    <h2 *ngIf="i === 2">Carrito de Compras</h2>
+    <img *ngIf="i === 2" class="Img" src="assets/Imagenes/parte3.png" alt="Carrito de Compras">
+    <img *ngIf="i === 2" class="Img" src="assets/Imagenes/parte4.png" alt="Carrito de Compras">
+    <img *ngIf="i === 2" class="Img" src="assets/Imagenes/parte5.png" alt="Carrito de Compras">
+    <img *ngIf="i === 2" class="Img" src="assets/Imagenes/parte6.png" alt="Carrito de Compras">
+    <img *ngIf="i === 2" class="Img" src="assets/Imagenes/parte7.png" alt="Carrito de Compras">
+
+  
+    <!-- Contenedor 4: Facturación -->
+    <h2 *ngIf="i === 3">Facturación</h2>
+    <img *ngIf="i === 3" class="Img" src="assets/Imagenes/Factura.jpg" alt="Facturación">
+  
+    <!-- Contenedor 5: Métodos de Pago -->
+    <h2 *ngIf="i === 4">Métodos de Pago</h2>
+    <img *ngIf="i === 4" class="Img" src="assets/Imagenes/metodos.png" alt="Métodos de Pago">
+  
+    <!-- Contenedor 6: Tarifas de Envío -->
+    <h2 *ngIf="i === 5">Tarifas de Envío</h2>
+    <img *ngIf="i === 5" class="Img" src="assets/Imagenes/tarifas.png" alt="Tarifas de Envío">
+  
+    <!-- Contenedor 7: Datos de la Empresa -->
+    <h2 *ngIf="i === 6">Datos de la Empresa</h2>
+    <img *ngIf="i === 6" class="Img" src="assets/Imagenes/datos.png" alt="Datos de la Empresa">
+  
+    <!-- Contenedor 8: Políticas de Privacidad -->
+    <h2 *ngIf="i === 7">Políticas de Privacidad</h2>
+    <img *ngIf="i === 7" class="Img" src="assets/Imagenes/politica1.png" alt="Políticas de Privacidad">
+    <img *ngIf="i === 7" class="Img" src="assets/Imagenes/polioticas2.png" alt="Políticas de Privacidad">
+  
+    <!-- Contenedor 9: Redes Sociales -->
+    <h2 *ngIf="i === 8">Redes Sociales</h2>
+    <img *ngIf="i === 8" class="Img" src="assets/Imagenes/social1.png" alt="Redes Sociales">
+    <img *ngIf="i === 8" class="Img" src="assets/Imagenes/FACEBOOKM.jpg" alt="Redes Sociales">
+    <img *ngIf="i === 8" class="Img" src="assets/Imagenes/INSTGRAM.jpg" alt="Redes Sociales">
+  
+    <!-- Contenedor 10: Promociones -->
+    <h2 *ngIf="i === 9">Promociones</h2>
+    <img *ngIf="i === 9" class="Img" src="assets/Imagenes/promociones.png" alt="Promociones">
+  
+    <!-- Contenedor 11: Contacto -->
+    <h2 *ngIf="i === 10">Contacto</h2>
+    <img *ngIf="i === 10" class="Img" src="assets/Imagenes/contacto.png" alt="Contacto">
+  </div>
+  
+  <button class="arrow" id="prev" (click)="cambiarCont(-1)">&#9664;</button>
+  <button class="arrow" id="next" (click)="cambiarCont(1)">&#9654;</button>
+  

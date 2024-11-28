@@ -1,0 +1,178 @@
+@import '../../styles/_index.scss';
+
+.Login {
+    .FirstSection {
+        .image {
+            width: 50%;
+            img {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+        .text {
+            width: 50%;
+            padding-top: 3em;
+            .logo {
+                display: block;
+                margin: auto;
+                width: 200px;
+            }
+
+            hr {
+                margin: 0 auto 0 auto;
+            }
+            
+            form {
+                width: 60%;
+                display: block;
+                margin: auto;
+                
+                div.form__body {
+                    padding: 1px;
+                    margin-top: 2em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid rgb(209, 209, 209);
+                    border-radius: 3px;
+                    box-shadow: $shadow-small;
+
+                    img {
+                        width: 35px;
+                        padding-right: 5px;
+                        padding-left: 4px;
+                    }
+
+                    input {
+                        outline:none !important;
+                        outline-width: 0 !important;
+                        box-shadow: none;
+                        -moz-box-shadow: none;
+                        -webkit-box-shadow: none;
+                        font-family: $Poppins;
+                        border: none;
+                        font-size: .9em;
+    
+                        &::placeholder {
+                            transition: 500ms ease-in;
+                            transform: translateX(0);
+                        }
+                        
+                    }
+
+                    &:focus-within {
+                        input {
+                            &::placeholder {
+                                transition: 500ms ease-in;
+                                transform: translateX(-350px);
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    display: block;
+                    margin: auto auto 2em auto;
+                    background-color: #0E6253;
+                    color: #fff;
+                    font-family: $Poppins;
+                    margin-top: 2.5em;
+                    transition: 390ms ease-in;
+                    &:hover {
+                        transition: 390ms ease-in;
+                        box-shadow: 0px 13px 24px -7px $primary-color;
+                    }
+                }
+            }
+            p {
+                color: $grey-500;
+                font-family: $Poppins;
+                font-weight: 400;
+                text-align: center;
+                font-size: .8em;
+                width: 75%;
+                margin: 2em auto;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 425px) {
+    .FirstSection {
+        .image {
+            display: none;
+        }
+        .text {
+            padding-top: 0!important;
+            width: 100%!important;
+            form {
+                width: 90%!important;
+                div.form__body {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 600px) {
+    .FirstSection {
+        .image {
+            display: none;
+        }
+        .text {
+            padding-top: 0!important;
+            width: 100%!important;
+            form {
+                width: 75%!important;
+                div.form__body {
+                    width: 80%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .FirstSection {
+        .image {
+            display: none;
+        }
+        .text {
+            padding-top: 0!important;
+            width: 100%!important;
+            form {
+                width: 100%!important;
+                div.form__body {
+                    width: 60%!important;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .FirstSection {
+        .image {
+            display: none;
+        }
+        .text {
+            padding-top: 0!important;
+            width: 100%!important;
+            form {
+                width: 100%!important;
+                div.form__body {
+                    width: 50%!important;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+
+
+

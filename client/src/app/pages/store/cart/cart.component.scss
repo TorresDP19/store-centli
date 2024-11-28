@@ -1,0 +1,183 @@
+@import '../../../styles/_index';
+
+input:focus, input.form-control:focus, textarea:focus, textarea.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+h2 {
+    margin-top: 1em;
+    font-family: $Poppins;
+    font-weight: 700;
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.scrollme {
+    overflow-x: auto;
+}
+
+table {    
+    margin-top: 2.5em;
+    thead {
+        font-family: $Poppins;
+        color: #fff;
+        background: #212121;
+        box-shadow: $shadow-small;
+        line-height: 1.9;
+    }
+    tbody {
+        td {
+            font-family: $Poppins;
+            &.price {
+                color: #B71C1C;
+                font-weight: 500;
+            }
+            button {
+                box-shadow: 0px 13px 24px -7px rgb(135, 134, 134);
+            }
+        }
+    }
+}
+
+.total {
+    margin: 1em auto auto 1em;
+    font-family: $Poppins;
+    text-align: center;
+    h3 {
+        font-size: 1.3em;
+        font-weight: 600;
+        span {
+            font-weight: 700;
+            color: #212121;
+        }
+    }
+    a {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        img {
+            width: 25px;
+            padding-right: 8px;
+        }
+    }
+    .clean {
+        display: block;
+        margin: 2em auto 5em;
+        background: #00796B;
+        color: #fff;
+        box-shadow: 0px 13px 24px -7px rgb(135, 134, 134);
+        transition: 350ms ease-in;
+        &:hover {
+            box-shadow: 0px 13px 24px -7px #00796B;
+            transition: 350ms ease-in;  
+        }
+    }
+    .pay {
+        background: #0097A7;
+        color: #ffF;
+        box-shadow: 0px 13px 24px -7px rgb(135, 134, 134);
+        transition: 350ms ease-in;
+        &:hover {
+            transition: 350ms ease-in;
+            box-shadow: 0px 13px 24px -7px #00796B;
+        }
+    }
+}
+
+.pay-form {
+    background: #D9F2EE;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    h3 {
+        font-family: $Poppins;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    p {
+        box-shadow: $shadow-small;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(204, 202, 202);
+        border-radius: 4px;
+        img {
+            max-width: 100%;
+            width: 30px;
+        } 
+        input {
+            border: none;
+            font-family: $Poppins;
+            font-weight: 300;
+        }
+    }
+    .btn-pay-now {
+        margin: 2em auto;
+        background:#212121;
+        color: #ffF;
+        box-shadow: 0px 13px 24px -7px rgb(135, 134, 134);
+        transition: 350ms ease-in;
+        &:hover {
+            transition: 350ms ease-in;
+            box-shadow: 0px 13px 24px -7px #212121;
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+    h2 {
+        font-size: 2.5em;
+    }
+    th {
+        font-size: .5em;
+    }
+    br.visible-sm {
+        display: block;
+    }
+    a.clean {
+        width: 65%;
+        display: block;
+        margin: 2em auto!important;
+    }
+    .pay-form {
+        margin-top: 5em;
+        h3 {
+            font-size: 1.5em;
+        }
+    }
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Estilo para los botones de métodos de pago */
+.payment-methods .btn {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Botón de Mercado Libre */
+.btn-mercado {
+    background-color: #FFB800;
+    color: white;
+}
+
+/* Botón de PayPal */
+.btn-paypal {
+    background-color: #003087;
+    color: white;
+}
+
+/* Botón de Google Pay */
+.btn-googlepay {
+    background-color: #4285F4;
+    color: white;
+}

@@ -1,0 +1,24 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection" *ngIf="pdfs">
+        <div *ngFor="let pdf of pdfs" class="container-pdf p-5 mt-5">
+            <a 
+                [href]="url + '/get-view-pdf/' + pdf.files"
+                download="pdf.files"
+                target="_blank"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="text-center text-none"
+            >
+                <img src="../../../../assets/svg/download.svg" alt="Icon">
+                Descargar archivo
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <div class="alert alert-danger w-50 d-block m-auto text-center">
+        <span class="mt-5">You must log in to view the content of this platform.</span>
+    </div>
+</div>

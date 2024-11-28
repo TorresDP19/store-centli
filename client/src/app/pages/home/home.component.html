@@ -1,0 +1,219 @@
+<app-navbar></app-navbar>
+
+<div class="Home">
+    <div class="FirstSection">
+        <img src="../../../assets/LogoN.png" alt="Logo" data-aos="fade-down" />
+        <hr width="75%" />
+        <h1 data-aos="fade-down">Centli</h1>
+        <h4 data-aos="fade-down">¡El sabor de México en cada bocado!</h4>
+    </div>
+    <div class="TwoSection">
+        <div class="all-TS d-lg-flex justify-content-lg-around">
+            <h2 data-aos="fade-down">Somos tu mejor opción para los momentos más crujientes.</h2>
+            <form class="d-lg-flex justify-content-lg-around">
+                <input class="form-control" placeholder="Ingresa tu correo electrónico" data-aos="fade-down" required/>
+                <button type="submit" class="btn waves-effect waves-ripple" data-aos="fade-down">
+                    Subscríbete
+                </button>
+            </form>
+        </div>
+    </div>
+    <hr width="100%" />
+    <div class="ThirdSection d-lg-flex">
+        <div class="all-THS">
+            <div class="img-lg">
+                <img src="../../../assets/test1.svg" alt="Background1" data-aos="flip-right" />
+            </div>
+            <div class="img-sm">
+                <img src="../../../assets/test2.jpg" alt="Background2" data-aos="flip-left" />
+                <img src="../../../assets/test3.jpg" data-aos="flip-left" />
+            </div>
+        </div>
+    </div>
+    <div class="FourSection">
+        <div class="info-course d-lg-flex">
+            <div class="image">
+                <img src="../../../assets/testing1.jpg" alt="Background 4" data-aos="fade-down" />
+            </div>
+            <div class="text">
+                <h3 data-aos="fade-down">
+                    Curso online de<br class="visible-sm" /> Tortillas a Mano
+                </h3>
+                <hr width="45%" data-aos="fade-down" />
+                <p data-aos="fade-down">
+                    Enseñar las técnicas tradicionales para elaborar tortillas a mano, desde la preparación de la masa hasta el estirado y cocido.
+                    Asi mismo Los participantes aprenderán a valorar el proceso artesanal y a crear tortillas más sabrosas y saludables.
+                </p>
+            </div>
+        </div>
+        <div class="info-course d-lg-flex justify-content-lg-start">
+            <div class="image">
+                <img src="../../../assets/testin2.jpg" alt="Background 5" data-aos="fade-down" />
+            </div>
+            <div class="text">
+                <h3 data-aos="fade-down">
+                    Curso online de <br class="visible-sm" /> Cocina Mexicana con Maíz
+                </h3>
+                <hr width="45%" data-aos="fade-down" />
+                <p data-aos="fade-down">
+                    Explorar diferentes recetas mexicanas que tienen al maíz como ingrediente principal, como tamales, pozole, esquites, etc. al igual Los participantes descubrirán la versatilidad del maíz en la cocina y podrán replicar las recetas en casa.
+                </p>
+            </div>
+        </div>
+        <a [routerLink]="['/learning']" routerLinkActive="router-link-active"  class="btn btn-courses waves-effect waves-ripple" data-aos="fade-down">
+            Cargar más
+        </a>
+    </div>
+    <div class="FiveSection">
+        <hr width="85%" />
+        <h2 data-aos="fade-down">Productos al 40% de  Descuento por el Buen Fin!</h2>
+        <table style="width: 100%; height: 100%;">
+            <tr>
+              <td style="text-align: center; vertical-align: middle;">
+                <img src="../../../assets/products/images.png" alt="Background 8" />
+              </td>
+            </tr>
+          </table>
+          
+                  <div data-aos="fade-down" class="product-info d-lg-flex justify-content-around">
+            <div class="image">
+                <img src="../../../assets/products/po3.png"alt="Background 8" />
+            </div>
+            <div class="text">
+                <h3 data-aos="fade-down">Totopos</h3>
+                <h4 data-aos="fade-down">De $1500 a 900$ -- 15 BOLSAS DE TOTOPOS!</h4>
+                <p data-aos="fade-down">
+                    Su versatilidad los hace perfectos para botanas, guarniciones y hasta para preparar platillos como los chilaquiles.
+                </p>
+            </div>
+        </div>
+        <div data-aos="fade-down" class="product-info d-lg-flex justify-content-around">
+            <div class="image">
+                <img src="../../../assets/products/poo2.png" alt="Background 7" />
+            </div>
+            <div class="text">
+                <h3 data-aos="fade-down">Tortillas de Maíz -- </h3>
+                <h4 data-aos="fade-down">660.00$ a  $ $396.00  -- 30 KILOS DE TORTILLAS</h4>
+                <p data-aos="fade-down">
+                    Su sabor auténtico y textura suave las hacen indispensables en cualquier cocina.
+                </p>
+            </div>
+        </div>
+        <div data-aos="fade-down" class="product-info d-lg-flex justify-content-around">
+            <div class="image">
+                <img src="../../../assets/products/poo4.png" alt="Background 6" />
+            </div>
+            <div class="text">
+                <h3 data-aos="fade-down">Nieve de Maíz</h3>
+                <h4 data-aos="fade-down">150$ a 40$ el litro de nieve de maiz!</h4>
+                <p data-aos="fade-down">
+                    Es una opción deliciosa y diferente para disfrutar en cualquier ocasión.
+                </p>
+            </div>
+        </div>
+        <a [routerLink]="['/store']" routerLinkActive="router-link-active"  class="btn btn-courses waves-effect waves-ripple" data-aos="fade-down">
+            Ver más productos
+        </a>
+    </div>
+    <div class="SixSection">
+        <hr width="75%" />
+        <h3 data-aos="fade-dowm">
+            Descubre los Orígenes de lo que <span>Consumes dia a dia</span>
+        </h3>
+        <div id="carouselProducts" class="carousel slide" data-ride="carousel" data-aos="fade-down">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="cards-products d-lg-flex justify-content-lg-center">
+
+
+                        <div class="card" onclick="window.location.href='https://www.gob.mx/agricultura/articulos/palomitas-de-maiz-una-botana-sana-100-mexicana#:~:text=Surgidas%20de%20las%20primeras%20mazorcas,ubicadas%20en%20el%20estado%20de';" style="cursor: pointer;">
+                            <img class="card-img-top" src="../../../assets/products/number1.jpg" alt="Background10" />
+                            <div class="card-body">
+                                <hr width="75%" />
+                                Palomitas de Maiz
+                            </div>
+                        </div>
+
+
+                        <div class="card" onclick="window.location.href='https://www.infobae.com/mexico/2024/01/26/cual-es-el-origen-de-las-gorditas-de-chicharron-antojito-predilecto-de-mexico/';" style="cursor: pointer;">
+                            <img class="card-img-top" src="../../../assets/products/number 2.jpg" alt="Background10" />
+                            <div class="card-body">
+                                <hr width="75%" />
+                                Chicharrones de maíz
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="card" onclick="window.location.href='https://www.gob.mx/agricultura/articulos/tamales-una-historia-de-sabor';" style="cursor: pointer;">
+                            <img class="card-img-top" src="../../../assets/products/number6.jpg" alt="Background10" />
+                            <div class="card-body">
+                                <hr width="75%" />
+                                Tamales
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="cards-products d-lg-flex justify-content-lg-center">
+
+
+
+                        <div class="card" onclick="window.location.href='https://www.mexicodesconocido.com.mx/no-son-esquites-ni-elote-en-vaso-conoce-la-historia-de-esta-delicia.html';" style="cursor: pointer;">
+                            <img class="card-img-top" src="../../../assets/products/testo3.png"  alt="Background15" />
+                            <div class="card-body">
+                                <hr width="75%" />
+                                Elotes en vaso
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="card" onclick="window.location.href='https://www.gob.mx/agricultura/es/articulos/elotes-aqui-esquites-alla-un-elotero-te-saludara#:~:text=Los%20elotes%20y%20esquites%20son,la%20%C3%A9poca%20de%20la%20Conquista.';" style="cursor: pointer;">
+                            <img class="card-img-top" src="../../../assets/products/number4.jpeg"  alt="Background16" />
+                            <div class="card-body">
+                                <hr width="75%" />
+                                Esquites
+                            </div>
+                        </div>
+
+
+                        <div class="card" onclick="window.location.href='https://www.gob.mx/agricultura/articulos/no-lo-pienses-mas-y-comeme-las-tostadas#:~:text=Como%20mencionamos%20arriba%2C%20las%20tostadas,com%C3%ADan%20con%20frijoles%20y%20chile.';" style="cursor: pointer;">
+                            <img class="card-img-top" src="../../../assets/products/testo2.png"  alt="Background8" />
+                            <div class="card-body">
+                                <hr width="75%" />
+                                Tostadas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselProducts" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselProducts" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" > </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="SevenSection">
+        <h3 data-aos="fade-dowm">Asesorate con nosotros</h3>
+        <p data-aos="fade-down">
+            ¡Reciba atención personalizada, novedades de nuestros catálogos, productos exclusivos y ofertas especiales directamente en su correo!
+        </p>
+        <div class="contact d-md-flex justify-content-lg-center">
+            <input
+                class="form-control"
+                placeholder="Ingresa tu correo electronico" 
+                data-aos="fade-dowm"
+            />
+            <button type="submit" class="btn" data-aos="flip-right">
+                Subscríbete
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

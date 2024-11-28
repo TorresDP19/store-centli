@@ -1,0 +1,102 @@
+<div *ngIf="identity.role == 'ROLE_ADMIN'">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection pt-3">
+        <div class="text">
+            <h2>Añadir un nuevo curso</h2>
+            <p class="text-danger">* Por favor complete todos los campos para crear el curso con exito *</p>
+            <hr width="45%">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="col-12 col-sm-8 col-md-5 d-block m-auto">
+                <div>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/course.svg" alt="Icon" width="30px" />
+                        <input 
+                            type="text" 
+                            name="course_name" 
+                            id="course_name"
+                            placeholder="Nombre del curso"
+                            class="form-control course_name"
+                            #course_name="ngModel"
+                            required
+                            [(ngModel)]="courses.course_name"
+                            [class.is-invalid]="course_name.touched && course_name.invalid"
+                        >
+                        <span class="text-danger" *ngIf="course_name.errors?.required && course_name.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/timesheet.svg" alt="Icon" width="30px" />
+                        <input 
+                            type="text"
+                            name="duration"
+                            id="duration"
+                            placeholder="Duración total del curso"
+                            class="form-control duration"
+                            #duration="ngModel"
+                            required
+                            [(ngModel)]="courses.duration"
+                            [class.is-invalid]="duration.touched && duration.invalid"
+                        >
+                        <span class="text-danger" *ngIf="duration.errors?.required && duration.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/Male Female User Group.svg" alt="Icon" width="30px" />
+                        <input
+                            type="text"
+                            name="instructor"
+                            id="instructor"
+                            placeholder="Nombre del instructor"
+                            class="form-control instructor"
+                            #instructor = "ngModel"
+                            required
+                            [(ngModel)]="courses.instructor"
+                            [class.is-invalid]="instructor.touched && instructor.invalid"
+                        >
+                        <span class="text-danger" *ngIf="instructor.errors?.required && instructor.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/module.svg" alt="Icon" width="30px" />
+                        <input
+                            type="text"
+                            name="modules"
+                            id="modules"
+                            placeholder="Número total de módulos"
+                            class="form-control modules"
+                            #modules = "ngModel"
+                            required
+                            [(ngModel)]="courses.modules"
+                            [class.is-invalid]="modules.touched && modules.invalid"
+                        >
+                        <span class="text-danger" *ngIf="modules.errors?.required && modules.touched">!</span>
+                    </p>
+
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/image.svg" alt="Icon" width="30px" />                      
+                        <input 
+                            type="file"
+                            name="image"
+                            id="image"
+                            placeholder="Imagen del curso"
+                            class="form-control image"
+                            (change)="fileChangeEvent($event);"
+                        />
+                    </p>
+
+                    <button type="submit" class="btn btn-response d-block waves-effect waves-ripple" [disabled]="!f.valid">
+                        Añadir curso
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="response">
+            <h3>Respuesta del servidor</h3>
+            <div *ngIf="alertMessage">
+                <div class="alert alert-primary w-75 d-block m-auto text-center ">
+                    {{alertMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <app-learning></app-learning>
+</div>

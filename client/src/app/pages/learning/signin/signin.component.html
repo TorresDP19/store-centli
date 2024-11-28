@@ -1,0 +1,73 @@
+<h1>Crear una nueva cuenta</h1>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="container">
+        <div class="row">
+            <div class="text col-5 d-block m-auto">
+                <p class="col-12">
+                    <img src="../../../../assets/svg/nameSG.svg" alt="Icon">
+                    <input type="text" name="name" id="name" placeholder="Tú nombre" #name="ngModel" required [(ngModel)]="users.name" [class.is-invalid]="name.touched && name.invalid">
+                    <span class="text-danger" *ngIf="name.errors?.required && name.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/FSSG.svg" alt="Icon">
+                    <input type="text" name="fathersurname" id="fathersurname" placeholder="Tú apellido paterno" #fathersurname="ngModel" required [(ngModel)]="users.fathersurname" [class.is-invalid]="fathersurname.touched && fathersurname.invalid">
+                    <span class="text-danger" *ngIf="fathersurname.errors?.required && fathersurname.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/FSSG.svg" alt="Icon">
+                    <input type="text" name="mothersurname" id="mothersurname" placeholder="Tú apellido materno" #mothersurname="ngModel" required [(ngModel)]="users.mothersurname" [class.is-invalid]="mothersurname.touched && mothersurname.invalid">
+                    <span class="text-danger" *ngIf="mothersurname.errors?.required && mothersurname.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/emailSG.svg" alt="Icon">
+                    <input type="email" name="email" id="email" placeholder="Dirección electrónica" #email="ngModel" required [(ngModel)]="users.email" [class.is-invalid]="email.touched && email.invalid">
+                    <span class="text-danger" *ngIf="email.errors?.required && email.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/passwordSG.svg" alt="Icon">
+                    <input type="password" name="password" id="password" placeholder="Contraseña" #password="ngModel" required [(ngModel)]="users.password" [class.is-invalid]="password.touched && password.invalid">
+                    <span class="text-danger" *ngIf="password.errors?.required && password.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/mastercard_credit_card.svg" alt="Icon">
+                    <input type="text" name="creditcard" id="creditcard" placeholder="Tarjeta de credito" #creditcard="ngModel" required [(ngModel)]="users.creditcard" [class.is-invalid]="creditcard.touched && creditcard.invalid" maxlength="19">
+                    <span class="text-danger" *ngIf="creditcard.errors?.required && creditcard.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/nipSG.svg" alt="Icon">
+                    <input type="text" name="nip" id="nip" placeholder="NIP" #nip="ngModel" required [(ngModel)]="users.nip" [class.is-invalid]="nip.touched && nip.invalid" maxlength="3">
+                    <span class="text-danger" *ngIf="nip.errors?.required && nip.touched">!</span>
+                </p>
+                <p class="col-12">
+                    <img src="../../../../assets/svg/dateSG.svg" alt="Icon">
+                    <input type="text" name="expiration_date" id="expiration_date" placeholder="2020-11-2" #expiration_date="ngModel" required [(ngModel)]="users.expiration_date" [class.is-invalid]="expiration_date.touched && expiration_date.invalid">
+                    <span class="text-danger" *ngIf="expiration_date.errors?.required && expiration_date.touched">!</span>
+                </p>
+                
+                <!-- Checkbox para aceptación de los términos y condiciones sin ngModel -->
+                <p class="col-12">
+                    <input type="checkbox" id="terms" name="terms" (change)="termsAccepted = $event.target.checked">
+                    <label for="terms">
+                        He leído y acepto los <a href="aboutus" target="_blank">términos y condiciones</a>.
+                    </label>
+                    <span class="text-danger" *ngIf="!termsAccepted && f.submitted">¡Debes aceptar los términos y condiciones!</span>
+                </p>
+
+                <!-- Botón de crear cuenta deshabilitado si la casilla no está marcada -->
+                <button type="submit" class="btn btn-response d-block waves-effect waves-ripple" [disabled]="!f.valid || !termsAccepted">
+                    Crear cuenta
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="response">
+    <h3 class="text-center">Respuesta del servidor</h3>
+    <div *ngIf="alertMessage">
+        <div class="alert alert-primary w-75 d-block m-auto text-center ">
+            {{alertMessage}}
+        </div>
+    </div>
+</div>

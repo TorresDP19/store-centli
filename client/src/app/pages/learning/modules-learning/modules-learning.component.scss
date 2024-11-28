@@ -1,0 +1,300 @@
+@import '../../../styles/_index';
+
+.TwoSection {
+    margin-top: 2.5em;
+    h2 {
+        font-family: $Poppins;
+        font-weight: 700;
+        font-size: 3em;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+    hr {
+        margin-top: 2em;
+    }
+
+    .actions {
+        a {
+            margin: 3em .8em 0 0;
+            box-shadow: $shadow-btn;
+            font-family: $Poppins;
+            font-weight: 400;
+            font-size: .95em;
+            transition: 350ms ease-in;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+
+            img {
+                width: 25px;
+                padding-right: 5px;
+            }
+
+            &.btn-edit {
+                color: #fff;
+                display: block;
+                margin: auto;
+                background: #005670;
+                &:hover {
+                    box-shadow: 0px 13px 24px -7px #005670;
+                }
+            }
+
+            &.btn-delete {
+                color: #fff;
+                display: block;
+                margin: auto;
+                background: #e4002b;
+                &:hover {
+                    box-shadow: 0px 13px 24px -7px #e4002b;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                transition: 350ms ease-in;
+            }
+
+        }
+    }
+
+    .secure {
+        margin-top: 1.5em;
+        p {
+            text-align: center;
+            font-family: $Poppins;
+            font-weight: 300;
+        }
+        .buttons {
+            a {
+                display: block;
+                margin: auto;
+                font-family: $Poppins;
+                font-weight: 300;
+                font-size: 300;
+                color: #fff;
+                box-shadow: $shadow-btn;
+                transition: 380ms ease-in;
+                &:hover {
+                    transition: 380ms ease-in;
+                    box-shadow: 0px 13px 24px -7px #7e7b7b;
+                }
+            }
+        }
+    }
+
+    .secure-update {
+        p {
+            font-family: $Poppins;
+            text-transform: uppercase;
+            padding-top: 1em;
+            font-size: 1.3em;
+        }
+    }
+
+}
+
+.ThirdSection {
+    padding-bottom: 4em;
+    .container {
+        .row {
+            a {
+                border: 1px solid rgb(238,238,238);
+                margin-top: 1em;
+                background: #fff;
+                transition: 350ms ease-in;
+                .image {
+                    height: 245px;
+                    width: 100%;
+                    overflow: hidden;
+                    img {
+                        margin: auto;
+                        display: block;
+                        height: 100%;
+                    }
+                }
+                .text {
+                    color: $black-500;
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        h4 {
+                            padding-top: 9px;
+                            padding-left: 3px;
+                            font-family: $Poppins;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            font-size: .7em;
+
+                            &.name {
+                                padding-left: 0;
+                                font-weight: 500;
+                            }
+
+                        }
+
+                    }
+                }
+                &:hover {
+                    transition: 350ms ease-in;
+                    box-shadow: 0px 13px 24px -7px rgba(0, 0, 0, 0.300);
+                }
+            }
+        }
+    }
+}
+
+.btn-adds {
+    background: #4bb0a9;
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: $shadow-container;
+    border-radius: 50px;
+    font-size: 1px;
+    transition: 350ms ease-in;
+
+    div {
+       display: block;
+       margin: 6em auto;
+       img {
+           display: block;
+           margin: .22em auto;
+           width: 75%;
+       }
+    }
+
+    &:hover {
+        transition: 350ms ease-in;
+        box-shadow: 0px 13px 24px -7px rgb(153, 153, 153);
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 425px) {
+    .TwoSection {
+        .actions {
+            display: block;
+            margin: auto;
+            width: 80%;
+
+            a {
+                margin-top: 1em;
+            }
+
+            button {
+                display: block;
+                margin: 1em auto;
+            }
+            br.visible-sm {
+                display: block;
+            }
+        }
+        .secure {
+            a {
+                width: 80%;
+            }
+            br.visible-sm {
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (min-width: 426px) and (max-width: 600px) {
+    .TwoSection {
+        .actions {
+            display: block;
+            margin: auto;
+            width: 65%;
+
+            a {
+                margin-top: 1em;
+            }
+
+            button {
+                display: block;
+                margin: 1em auto;
+            }
+
+            br.visible-sm {
+                display: block;
+            }
+
+        }
+        .secure {
+            a {
+                width: 65%;
+            }
+            br.visible-sm {
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 767px) {
+    .TwoSection {
+        .actions {
+            display: block;
+            margin: auto;
+            width: 55%;
+
+            a {
+                margin-top: 1em;
+            }
+
+            button {
+                display: block;
+                margin: 1em auto;
+            }
+
+            br.visible-sm {
+                display: block;
+            }
+
+        }
+        .secure {
+            a {
+                width: 55%;
+            }
+            br.visible-sm {
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .TwoSection {
+        .actions {
+            display: block;
+            margin: auto;
+            width: 45%;
+
+            a {
+                margin-top: 1em;
+            }
+
+            button {
+                display: block;
+                margin: 1em auto;
+            }
+
+            br.visible-sm {
+                display: block;
+            }
+
+        }
+        .secure {
+            a {
+                width: 45%;
+            }
+            br.visible-sm {
+                display: block;
+            }
+        }
+    }
+}

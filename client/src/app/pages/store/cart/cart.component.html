@@ -1,0 +1,186 @@
+<div *ngIf="identity">
+    <app-navbar-store></app-navbar-store>
+    <h2>Mi carrito de compras</h2>
+    <div class="scrollme">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Nombre del producto</th>
+                    <th scope="col">C/U</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">P. Final</th>
+                    <th scope="col" class="text-center">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of MyProducts; let i = index;" id="{{product._id}}">
+                    <th><img src="{{url + '/get-image-product/' + product.image}}" width="50px" alt=""></th>
+                    <td>{{product.productName}}</td>
+                    <td class="price">{{product.price | currency}}</td>
+                    <td>
+                        <input
+                        [(ngModel)]="product.qtyTotal"
+                        [ngModelOptions]=" {standalone: true} "
+                        min="1"
+                        type="number"
+                        value= {{product.qtyTotal}}
+                        name=""
+                        class="form-control col-12 col-sm-8 col-md-4 col-lg-4"
+                        (change)="changeSubtotal(product ,i)"
+                        >
+                    </td>
+                    <td>
+                        <div class="col-2 pr-0">
+                            <div #subTotalWrap>{{ product.price | currency }}</div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm m-auto d-block waves-effect waves-ripple rounded" (click)="removeFromCart(product)">x</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="total">
+        <div>
+            <h3 class="text-uppercase">Total a pagar: <hr width="25%"><br class="visible-sm"><span> {{total | currency}} MX</span></h3>
+            <div class="">
+                <a class="btn clean waves-effect waves-ripple rounded col-9 col-sm-5 col-md-3 col-lg-3" (click)="clearCart(MyProducts)">
+                    <img src="../../../../assets/svg/cartE.svg" alt="Icon">
+                    Vaciar mi carrito
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pay-form" *ngFor="let product of MyProducts">
+        <hr width="50%">
+        <h3 class="text-center">Datos de mi tarjeta</h3>
+        <hr width="50%">
+        <form class="col-12 col-sm-8 col-md-6 col-lg-5 d-block m-auto">
+            
+ <!-- Métodos de pago -->
+ <div class="payment-methods mt-3">
+    <h5 class="text-center">Métodos de pago</h5>
+    <div class="row justify-content-center">
+        <div class="col-4 text-center">
+            <img src="../../../../assets/img/mercado.png" alt="Mercado Libre" class="payment-icon" style="width: 200px; height: auto;">
+            <button class="btn btn-mercado btn-sm mt-2">Mercado Libre</button>
+        </div>
+        <div class="col-4 text-center">
+            <img src="../../../../assets/img/paypal.png" alt="PayPal" class="payment-icon" style="width: 200px; height: auto;">
+            <button class="btn btn-paypal btn-sm mt-2">PayPal</button>
+        </div>
+        <div class="col-4 text-center">
+            <img src="../../../../assets/img/gogole.png" alt="Google Pay" class="payment-icon" style="width: 200px; height: auto;">
+            <button class="btn btn-googlepay btn-sm mt-2">Google Pay</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+            <!-- Información del titular de la tarjeta -->
+            <p class="col-12">
+                <img src="../../../../assets/svg/person.svg" alt="Icon" class="icon">
+                <input type="text" class="form-control" placeholder="Ingresa tu nombre" required value="{{identity.name}} {{identity.fathersurname}} {{identity.mothersurname}}">
+            </p>
+            
+            <!-- Número de tarjeta -->
+            <p class="col-12">
+                <img src="../../../../assets/svg/debit_card.svg" alt="Icon" class="icon">
+                <input type="text" class="form-control" placeholder="Ingresa tu tarjeta de credito" required value="{{identity.creditcard}}">
+            </p>
+    
+            <!-- NIP -->
+            <p class="col-12">
+                <img src="../../../../assets/svg/nip.svg" alt="Icon" class="icon">
+                <input type="text" class="form-control" placeholder="Ingresa tu NIP" required value="{{identity.nip}}">
+            </p>
+    
+            <!-- Fecha de expiración -->
+            <p class="col-12">
+                <img src="../../../../assets/svg/date.svg" alt="Icon" class="icon">
+                <input type="text" class="form-control" placeholder="Fecha de expiración" required value="{{identity.expiration_date}}">
+            </p>
+    
+            <!-- Dirección -->
+            <p class="col-12">
+                <img src="../../../../assets/svg/location.svg" alt="Icon" class="icon">
+                <input type="text" class="form-control street" placeholder="Ubicación de tu calle" required>
+            </p>
+    
+
+  <!-- Incrustación de Google Maps debajo del formulario -->
+  <h5 class="text-center">AQUI PUEDE RECOGER TU PEDIDO</h5>
+  <div class="google-maps" style="width: 100%; height: 400px; margin-top: 20px;">
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.9357055686223!2d-99.1762896339959!3d19.552651808882093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f7c3a5832aeb%3A0xcda64171435b5d51!2sTortilleria%20CENTLI!5e0!3m2!1ses-419!2smx!4v1731267284724!5m2!1ses-419!2smx"
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<BR>
+<h5 class="text-center">PEDIDOS EN TODA LA REPUBLICA SE COBRARA ENVIO DE 100$</h5>
+<div class="google-maps" style="width: 100%; height: 400px; margin-top: 20px;">
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15019367.370395655!2d-113.26052594252658!3d23.21258333154409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1731267359166!5m2!1ses-419!2smx"
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+
+            <!-- Botón de pago -->
+            <button type="submit" (click)="toDoPay(product);" class="btn btn-pay-now btn-sm d-block">Realizar pago</button>
+    
+    
+            <!-- Sección para solicitar factura -->
+            <div class="invoice-request mt-4">
+                <h5 class="text-center">Solicitar Factura</h5>
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="rfc">RFC:</label>
+                        <input type="text" id="rfc" class="form-control" placeholder="Ingresa tu RFC" [(ngModel)]="invoiceData.rfc">
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label for="razonSocial">Razón Social:</label>
+                        <input type="text" id="razonSocial" class="form-control" placeholder="Ingresa tu razón social" [(ngModel)]="invoiceData.razonSocial">
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label for="direccionFiscal">Dirección Fiscal:</label>
+                        <input type="text" id="direccionFiscal" class="form-control" placeholder="Ingresa tu dirección fiscal" [(ngModel)]="invoiceData.direccionFiscal">
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label for="emailFactura">Correo Electrónico para Factura:</label>
+                        <input type="email" id="emailFactura" class="form-control" placeholder="Ingresa tu correo" [(ngModel)]="invoiceData.emailFactura">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" [(ngModel)]="invoiceData.deseaFactura" /> ¿Deseas recibir factura?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-info btn-sm mt-3" (click)="submitInvoiceData()">Enviar Datos para Factura</button>
+        </form>    
+        </div>
+            
+        
+<div *ngIf="!identity">
+    <div class="alert alert-primary">
+        You must login
+    </div>
+</div>

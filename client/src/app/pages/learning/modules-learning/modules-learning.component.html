@@ -1,0 +1,115 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="TwoSection">
+        <h2 data-aos="fade-down">Módulos del curso</h2>
+
+        <div *ngIf="course">
+            <div class="actions d-lg-flex justify-content-lg-start" *ngIf="identity.role == 'ROLE_ADMIN'" data-aos="fade-down">
+                <a class="btn btn-edit waves-effect waves-ripple" (click)="onUpdateConfirm(course._id)">
+                    <img src="../../../../assets/svg/edit.svg" alt="Logo" />
+                    Editar curso
+                </a>
+                <br class="visible-sm">
+                <a class="btn btn-delete waves-effect waves-ripple" (click)="onDeleteConfirm(course._id)" data-aos="fade-down">
+                    <img src="../../../../assets/svg/trash.svg" alt="Logo" />
+                    Eliminar este curso
+                </a>
+            </div>
+
+            <div class="secure" *ngIf="confirm == course._id">
+                <p>¿Estas seguro de eliminar este producto?</p>
+                <div class="buttons d-lg-flex justify-content-lg-around">
+                    <a class="btn btn-cancel btn-primary waves-effect waves-ripple" (click)="onCancelCourse()">
+                        No, cancelar esta acción
+                    </a>
+                    <br class="visible-sm">
+                    <a class="btn btn-deletes btn-danger waves-effect waves-ripple" (click)="onDeleteCourse(course._id)">
+                        Sí, eliminar definitivamente
+                    </a>
+                </div>
+            </div>
+
+                                
+            <div class="secure-update" *ngIf="update == course._id">
+                <p class="text-center mt-3">Modificar curso</p>
+                <form (ngSubmit)="onUpdateCourse(course._id)" #f="ngForm" class="col-12 col-sm-9 col-md-7 col-lg-5 d-block m-auto">
+                    <p>
+                        <input type="text" class="form-control" name="course_name" #course_name="ngModel" [(ngModel)]="course.course_name" id="" value="{{course.course_name}}">
+                    </p>
+                    <p>
+                        <input type="text" class="form-control" name="duration" #duration="ngModel" [(ngModel)]="course.duration" value="{{course.duration}}">
+                    </p>
+                    <p>
+                        <input type="text" class="form-control" name="instructor" #instructor="ngModel" [(ngModel)]="course.instructor" value="{{course.instructor}}">
+                    </p>
+                    <p>
+                        <input type="text" class="form-control" name="modules" #modules="ngModel" [(ngModel)]="course.modules" value="{{course.modules}}">
+                    </p>
+                    <p>
+                        <input type="file" class="form-control" name="image" id="" (change)="fileChangeEvent($event)">
+                    </p>
+
+                    <div class="actions mt-3 d-lg-flex justify-content-lg-around">
+                        <button type="reset" class="btn-danger btn waves-effect waves-ripple" (click)="onUpdateCancel()">Cancelar acción</button>
+                        <button type="submit" class="btn-primary btn waves-effect waves-ripple">Actualizar curso</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <hr>
+    </div>
+
+    <div class="ThirdSection" *ngIf="modules">
+        <div class="container">
+            <div class="row justify-content-around">
+                <a 
+                    [routerLink]="['content/', modules._id]" 
+                    routerLinkActive="router-link-active" 
+                    *ngFor="let modules of modules" 
+                    class="p-4 mt-5 rounded text-none"
+                    data-aos="fade-down"
+                >
+                    <div class="image">
+                        <img src="{{ url + '/get-image-product/' + modules.image}}" alt="{{modules.image}}">
+                    </div>
+                    <hr>
+                    <div class="text">
+                        <div class="name_module">
+                            <h4 class="name"> {{modules.module_name}} </h4>
+                        </div>
+                        <hr>
+                        <div class="duration_module">
+                            <img src="../../../../assets/svg/time.svg" alt="Icon" width="18px">
+                            <h4> {{modules.module_duration}} </h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+</div>
+
+
+<div *ngIf="course">
+    <div *ngIf="identity.role == 'ROLE_ADMIN'">
+        <a [routerLink]="['add-module/', course._id]" routerLinkActive="router-link-active"class="ThirdSection btn-adds">
+            <div>
+                <img src="../../../../assets/svg/addE.svg" alt="adds">
+            </div>
+        </a>    
+    </div>    
+</div>
+
+<div class="clearfix"></div>
+
+<div *ngIf="!identity">
+    <div class="alert alert-danger w-50 d-block m-auto text-center">
+        <span class="mt-5">You must log in to view the content of this platform.</span>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+// src/app/components/tutorial/tutorial.component.scss
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fondo y tipografía básica */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: #0C6156;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 36px;
+  }
+  
+  /* Estilos para los contenedores */
+  .Contenedor {
+    display: none;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+  
+    &.visible {
+      display: block;
+    }
+  }
+  
+  /* Títulos dentro de los contenedores */
+  .Contenedor h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  /* Subtítulos dentro de los contenedores */
+  .Contenedor h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #2980b9;
+  }
+  
+  /* Estilo para las imágenes */
+  .Img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para los botones */
+  .arrow {
+    font-size: 30px;
+    padding: 10px 20px;
+    background-color: #f8d35b;
+    border: none;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+  
+  .arrow:hover {
+    background-color: #2980b9;
+  }
+  
+  #prev {
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  
+  #next {
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  /* Animación de transición para la visibilidad de los contenedores */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Media queries para hacer la página más responsiva */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 28px;
+    }
+  
+    .Contenedor h1 {
+      font-size: 20px;
+    }
+  
+    .Contenedor h2 {
+      font-size: 18px;
+    }
+  
+    .arrow {
+      font-size: 25px;
+      padding: 8px 16px;
+    }
+  
+    .Img {
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 22px;
+    }
+  
+    .Contenedor h1 {
+      font-size: 18px;
+    }
+  
+    .Contenedor h2 {
+      font-size: 16px;
+    }
+  
+    .arrow {
+      font-size: 20px;
+      padding: 5px 12px;
+    }
+  }
+  

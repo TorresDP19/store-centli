@@ -1,0 +1,18 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection" *ngIf="video">
+        <div *ngFor="let video of video">
+            <h2> <span class="number">{{video.number}}</span> {{video.nameVideo}} </h2>
+            <hr width="65%">
+            <video controls controlslist="nodownload" preload="metadata" class="rounded">
+                <source src="{{url + '/get-view-video/' + video.files}}">
+            </video>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <div class="alert alert-danger w-50 d-block m-auto text-center">
+        <span class="mt-5">You must log in to view the content of this platform.</span>
+    </div>
+</div>

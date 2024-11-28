@@ -1,0 +1,41 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="TwoSection">
+        <h2 data-aos="fade-down">Videos del curso</h2>
+        <hr>
+    </div>
+    <div class="FirstSection" *ngIf="video">
+        <div class="container">
+            <div class="row justify-content-around">
+                <a
+                [routerLink]="['view/' + video._id]" 
+                routerLinkActive="router-link-active" 
+                *ngFor="let video of video"
+                class="p-4 mt-5 rounded text-none"
+                data-aos="fade-down"
+                >
+                    <h2> {{video.number}} </h2>
+                    <hr>
+                    <h3> {{video.nameVideo}} </h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="content">
+        <div *ngIf="identity.role == 'ROLE_ADMIN'">
+            <a [routerLink]="['add-video/', content._id]" routerLinkActive="router-link-active"class="ThirdSection btn-adds">
+                <div>
+                    <img src="../../../../assets/svg/addE.svg" alt="adds">
+                </div>
+            </a>    
+        </div>    
+    </div>
+
+</div>
+
+<div *ngIf="!identity">
+    <div class="alert alert-danger w-50 d-block m-auto text-center">
+        <span class="mt-5">You must log in to view the content of this platform.</span>
+    </div>
+</div>

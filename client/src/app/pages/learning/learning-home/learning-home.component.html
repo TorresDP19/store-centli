@@ -1,0 +1,71 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection">
+        <h2 data-aos="fade-down">Descubre los secretos de la cocina mexicana con nuestros cursos</h2>
+        <div class="subnav">
+            <div data-aos="fade-down" class="search shadow-small col-10 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+                <img src="../../../../assets/svg/Search.svg" alt="Search" width="25px">
+                <input
+                    type="search"
+                    placeholder="Nombre del curso"
+                    name="search"
+                    spellcheck="false"
+                    [(ngModel)]="searchTerm"
+                    class="search form-control">
+            </div>
+            <div data-aos="fade-down" class="order">
+                Ordenados por: <strong>Agregados recientemente</strong>
+            </div>
+        </div>
+    </div>
+    <div class="TwoSection">
+        <hr>
+        <p class="item-not-found" *ngIf="!(courses | courseFilter:searchTerm)?.length"><span><strong>No se han encontrado resultados.</strong></span><span class="info-item">No podemos encontrar ningún curso que coincida con su búsqueda<br> o no hay ningún curso disponible ahora.</span> <span>\(o_o)/</span> </p>
+        <div class="container">
+            <div class="row d-flex justify-content-around">
+                <a 
+                [routerLink]="['course', courses._id]" 
+                routerLinkActive="router-link-active"  
+                *ngFor="let courses of courses | courseFilter:searchTerm" 
+                class="rounded text-none p-3 mt-5"
+                data-aos="fade-down"
+                >
+                    <div class="image">
+                        <img src="{{ url + '/get-image-course/' + courses.image }}" alt="{{courses.image}}" class="rounded">
+                    </div>
+                    <div class="text">
+                        <h3 class="instructor">{{courses.instructor}}</h3>
+                        <h3 class="course_name">{{courses.course_name}}</h3>
+                        <div class="info d-md-flex justify-content-md-around">
+                            <div class="modules info-d">
+                                <img src="../../../../assets/svg/module.svg" alt="Module">
+                                {{courses.modules}} Módulos
+                            </div>
+                            <div class="duration info-d">
+                                <img src="../../../../assets/svg/future.svg" alt="Future">
+                                {{courses.duration}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="identity.role == 'ROLE_ADMIN'" >
+        <a [routerLink]="['add-course']" routerLinkActive="router-link-active" class="ThirdSection btn-add">
+            <div>
+                <img src="../../../../assets/svg/addE.svg" alt="add">
+            </div>
+        </a>    
+    </div>
+
+</div>
+
+<div class="clearfix"></div>
+
+<div *ngIf="!identity">
+    <div class="alert alert-danger w-50 d-block m-auto text-center">
+        <span class="mt-5">You must log in to view the content of this platform.</span>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div *ngIf="identity">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection pt-3">
+        <div class="text">
+            <h2>Añadir un nuevo examen</h2>
+            <p class="text-danger">* Por favor complete todos los campos para crear el PDF con exito *</p>
+            <hr width="45%">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="col-12 col-sm-8 col-md-6 col-lg-4 d-block m-auto">
+                <div>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/number.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="number"
+                        id="number"
+                        placeholder="Número del examen"
+                        class="form-control number"
+                        #number="ngModel"
+                        required
+                        [(ngModel)]="quiz.number"
+                        [class.is-invalid]="number.touched && number.invalid"
+                    >
+                    <span class="text-danger" *ngIf="number.errors?.required && number.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/exam.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="nameQuiz"
+                        id="nameQuiz"
+                        placeholder="Nombre del examen"
+                        class="form-control nameQuiz"
+                        #nameQuiz="ngModel"
+                        required
+                        [(ngModel)]="quiz.nameQuiz"
+                        [class.is-invalid]="nameQuiz.touched && nameQuiz.invalid"
+                    >
+                    <span class="text-danger" *ngIf="nameQuiz.errors?.required && nameQuiz.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/video_content.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="content"
+                        id="content"
+                        placeholder="ID Contenido"
+                        class="form-control content"
+                        #content="ngModel"
+                        required
+                        [(ngModel)]="quiz.content"
+                        [class.is-invalid]="content.touched && content.invalid"
+                    >
+                    <span class="text-danger" *ngIf="content.errors?.required && content.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/link.svg" alt="Icon" width="30px">
+                        <input
+                        type="text"
+                        name="link"
+                        id="link"
+                        placeholder="Link"
+                        class="form-control link"
+                        #link="ngModel"
+                        required
+                        [(ngModel)]="quiz.link"
+                        [class.is-invalid]="link.touched && link.invalid"
+                    >
+                    <span class="text-danger" *ngIf="link.errors?.required && link.touched">!</span>
+                    </p>
+                    <button type="submit" class="btn btn-response d-block waves-effect waves-ripple" [disabled]="!f.valid">
+                        Añadir examen
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="response">
+            <h3>Respuesta del servidor</h3>
+            <div *ngIf="alertMessage">
+                <div class="alert alert-primary w-50 d-block m-auto text-center">
+                    {{alertMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+
+</div>

@@ -1,0 +1,31 @@
+<div *ngIf="identity">
+    <nav class="navbar navbar-expand-lg navbar-light rounded">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="../../../assets/logo.png" alt="Logo" width="85px"></a>
+            <button class="navbar-toggler menu-wrapper" (click)="navbar()" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger-menu" [ngClass]="statusnavBar ? 'hamburger-menu animate' : 'hamburger-menu'"></div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="inicio" class="ml-2 nav-link" data-aos="fade-right">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ml-2 actived" data-aos="fade-right">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="store" class="nav-link ml-2" data-aos="fade-right">Tienda</a>                        
+                    </li>
+                    <div class="right">
+                        <li class="nav-item name">
+                            <a class="nav-link" data-aos="fade-right">{{identity.name}} {{identity.fathersurname}} {{identity.mothersurname}} </a>
+                        </li>
+                        <li class="nav-item leave">
+                            <a class="nav-link ml-2 pointer" data-aos="fade-right" (click)="logout()"><img src="../../../assets/svg/shutdown.svg" alt="exit" width="15px"></a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

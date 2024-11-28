@@ -1,0 +1,34 @@
+
+.contact-form {
+    max-width: 6000px;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: #989de2;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 90px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .alert {
+    padding: 15px;
+    background-color: #28a745;  // Verde para el mensaje de éxito
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .alert-success {
+    background-color: #28a745;  // Verde
+  }
+  
+  .mt-4 {
+    margin-top: 20px;
+  }
+  

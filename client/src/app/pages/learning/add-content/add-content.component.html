@@ -1,0 +1,116 @@
+<div *ngIf="identity.role == 'ROLE_ADMIN'">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection pt-3">
+        <div class="text">
+            <h2>Añadir un nuevo contenido</h2>
+            <p class="text-danger">* Por favor complete todos los campos para crear el curso con exito *</p>
+            <hr width="45%">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="col-12 col-sm-8 col-md-6 col-lg-5 d-block m-auto">
+                <div>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/id.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="course"
+                            id="course"
+                            placeholder="Ingresa el ID de la URL despues de COURSE"
+                            class="form-control id_course"
+                            #course="ngModel"
+                            required
+                            [(ngModel)]="content.course"
+                            [class.is-invalid]="course.touched && course.invalid"
+                        >
+                        <span class="text-danger" *ngIf="course.errors?.required && course.touched">!</span>
+                    </p>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/id.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="module"
+                            id="module"
+                            placeholder="Ingresa el ID de la URL despues de CONTENT"
+                            class="form-control module"
+                            #module="ngModel"
+                            required
+                            [(ngModel)]="content.module"
+                            [class.is-invalid]="module.touched && module.invalid"
+                        >
+                        <span class="text-danger" *ngIf="module.errors?.required && module.touched">!</span>
+                    </p>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/number.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="number"
+                            id="number"
+                            placeholder="Ingresa el número de contenido"
+                            class="form-control number"
+                            #number="ngModel"
+                            required
+                            [(ngModel)]="content.number"
+                            [class.is-invalid]="number.touched && number.invalid"
+                        >
+                        <span class="text-danger" *ngIf="number.errors?.required && number.touched">!</span>
+                    </p>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/name.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="namecontent"
+                            id="namecontent"
+                            placeholder="Ingresa el nombre del contenido (PDF's, Videos, Examenes)"
+                            class="form-control namecontent"
+                            #namecontent="ngModel"
+                            required
+                            [(ngModel)]="content.namecontent"
+                            [class.is-invalid]="namecontent.touched && namecontent.invalid"
+                        >
+                        <span class="text-danger" *ngIf="namecontent.errors?.required && namecontent.touched">!</span>
+                    </p>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/link.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="link"
+                            id="link"
+                            placeholder="Ingresa el link de este: (pdfs, videos, examenes)"
+                            class="form-control link"
+                            #link="ngModel"
+                            required
+                            [(ngModel)]="content.link"
+                            [class.is-invalid]="link.touched && link.invalid"
+                        >
+                        <span class="text-danger" *ngIf="link.errors?.required && link.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/image.svg" alt="Icon" width="30px" />                      
+                        <input 
+                            type="file"
+                            name="image"
+                            id="image"
+                            placeholder="Imagen del curso"
+                            class="form-control image"
+                            (change)="fileChangeEvent($event);"
+                        />
+                    </p>
+                    <button type="submit" class="btn btn-response d-block waves-effect waves-ripple" [disabled]="!f.valid">
+                        Añadir contenido
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="response">
+            <h3>Respuesta del servidor</h3>
+            <div *ngIf="alertMessage">
+                <div class="alert alert-primary w-50 d-block m-auto text-center">
+                    {{alertMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="!identity">
+    <app-learning-home></app-learning-home>
+</div>

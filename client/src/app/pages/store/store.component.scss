@@ -1,0 +1,288 @@
+@import '../../styles/_index.scss';
+
+input:focus, input.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+.btn-cart {
+    background: #fff;
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: $shadow-container;
+    border-radius: 50px;
+    font-size: 30px;
+    transition: 350ms ease-in;
+
+    div {
+       display: block;
+       margin: auto;
+       img {
+           display: block;
+           margin: .3em auto;
+           width: 75%;
+       }
+    }
+
+    &:hover {
+        transition: 350ms ease-in;
+        box-shadow: 0px 13px 24px -7px rgb(153, 153, 153);
+    }
+
+}
+
+.btn-add {
+    background: #fff;
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 30px;
+    bottom: 100px;
+    right: 30px;
+    box-shadow: $shadow-container;
+    border-radius: 50px;
+    font-size: 30px;
+    transition: 350ms ease-in;
+
+    div {
+       display: block;
+       margin: auto;
+       img {
+           display: block;
+           margin: .3em auto;
+           width: 75%;
+       }
+    }
+
+    &:hover {
+        transition: 350ms ease-in;
+        box-shadow: 0px 13px 24px -7px rgb(153, 153, 153);
+    }
+
+}
+
+
+.TwoSection {
+    h3 {
+        font-family: $Poppins;
+        font-weight: 700;
+        color: $grey-500;
+        text-transform: uppercase;
+        font-size: 1.5em;
+    }
+    .form-group {
+        box-shadow: $shadow-small;
+        width: 100%;
+        max-width: 280px;
+        padding: .2em;
+        border: 1px solid #2121;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        input {
+            padding: .2em;
+            width: 100%;
+            border: none;
+            font-size: .9em;
+            color: $grey-600;
+
+            &::placeholder {
+                font-family: 'Poppins', sans-serif;
+                font-size: .9em;
+                transition: 350ms ease-in;
+                transform: translateX(0);
+            }
+
+        }
+        
+        img {
+            width: 100%;
+            max-width: 25px;
+            padding: 4px;
+        }
+
+        &:focus-within {
+            input {
+                &::placeholder {
+                    transition: 350ms ease-in;
+                    transform: translateX(-215px);
+                }
+            }
+        }
+
+    }
+}
+
+.ThirdSection {
+    padding-bottom: 3em;
+    .item-not-found {
+        font-family: $Poppins;
+        text-align: center;
+        padding-top: 5em;
+        width: 85%;
+        margin: auto;
+        font-size: 1.2em;
+        color: $black-600;
+
+        span {
+            display: block;
+            padding-top: 1.5em;
+            font-weight: 500;
+
+            &.info-item {
+                font-weight: 400;
+                color: $grey-500;
+                font-size: .7em;
+            }
+
+        }
+
+    }
+    .container {
+        a {
+            transition: 300ms ease-in;
+            box-shadow: $shadow-container;
+            .image {
+                height: 245px;
+                width: 100%;
+                overflow: hidden;
+                img {
+                    margin: auto;
+                    display: block;
+                    height: 100%;
+                }
+            }
+            .text {
+                h4 {
+                    font-weight: 300;
+                    font-size: 1.2em;
+
+                    &.__name {
+                        font-family: $Mulish;
+                        font-size: 1.2em;
+                        text-transform: uppercase;
+                        color: $grey-500;
+                        width: 320px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    &.__price {
+                        font-family: $Poppins;
+                        margin-top: .5em;
+                        font-weight: 600;
+                        color: #000!important;
+                        font-size: 1.4em;
+                    }
+
+                }
+            }
+
+            &:hover {
+                transition: 300ms ease-in;
+                background: rgb(253, 253, 253);
+                box-shadow: 0px 13px 15px -7px rgba(0, 0, 0, 0.329);
+                
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 425px) {
+    .TwoSection {
+        text-align: center;
+        .form-group {
+            margin: 1em auto;
+        }
+    }
+    .ThirdSection {
+        .item-not-found {
+            padding-top: 2em;
+        }
+        .container {
+            a {
+                width: 85%;
+                .text {
+                    h4 {
+                        &.__name {
+                            width: 240px;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 600px) {
+    .TwoSection {
+        text-align: center;
+        .form-group {
+            margin: 1em auto;
+        }
+    }
+    .ThirdSection {
+        .item-not-found {
+            padding-top: 2em;
+        }
+        .container {
+            a {
+                width: 85%;
+                .text {
+                    h4 {
+                        &.__name {
+                            width: 300px;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 767px) {
+    .TwoSection {
+        text-align: center;
+        .form-group {
+            margin: 1em auto;
+        }
+    }
+    .ThirdSection {
+        .item-not-found {
+            padding-top: 2em;
+        }
+        .container {
+            a {
+                width: 65%;
+                .text {
+                    h4 {
+                        &.__name {
+                            width: 300px;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .TwoSection {
+        text-align: center;
+        .form-group {
+            margin: 1em auto;
+        }
+    }
+}

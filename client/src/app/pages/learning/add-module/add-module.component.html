@@ -1,0 +1,85 @@
+<div *ngIf="identity.role == 'ROLE_ADMIN'">
+    <app-navbar-learning></app-navbar-learning>
+    <div class="FirstSection pt-3">
+        <div class="text">
+            <h2>Añadir un nuevo módulo</h2>
+            <p class="text-danger">* Por favor complete todos los campos para crear el curso con exito *</p>
+            <hr width="45%">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="col-12 col-sm-8 col-md-6 col-lg-4 d-block m-auto">
+                <div>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/more_detailsForm.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="course"
+                            id="course"
+                            placeholder="Ingresa el ID de la URL"
+                            class="form-control id_course"
+                            #course="ngModel"
+                            required
+                            [(ngModel)]="modules.course"
+                            [class.is-invalid]="course.touched && course.invalid"
+                        >
+                        <span class="text-danger" *ngIf="course.errors?.required && course.touched">!</span>
+                    </p>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/module.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="module_name"
+                            id="module_name"
+                            placeholder="Nombre del módulo"
+                            class="form-control module_name"
+                            #module_name="ngModel"
+                            required
+                            [(ngModel)]="modules.module_name"
+                            [class.is-invalid]="module_name.touched && module_name.invalid"
+                        >
+                        <span class="text-danger" *ngIf="module_name.errors?.required && module_name.touched">!</span>
+                    </p>
+                    <p class="col.12">
+                        <img src="../../../../assets/svg/time.svg" alt="" width="30px">
+                        <input
+                            type="text"
+                            name="module_duration"
+                            id="module_duration"
+                            placeholder="Duración del módulo"
+                            class="form-control module_duration"
+                            #module_duration="ngModel"
+                            required
+                            [(ngModel)]="modules.module_duration"
+                            [class.is-invalid]="module_duration.touched && module_duration.invalid"
+                        >
+                        <span class="text-danger" *ngIf="module_duration.errors?.required && module_duration.touched">!</span>
+                    </p>
+                    <p class="col-12">
+                        <img src="../../../../assets/svg/image.svg" alt="Icon" width="30px" />                      
+                        <input 
+                            type="file"
+                            name="image"
+                            id="image"
+                            placeholder="Imagen del curso"
+                            class="form-control image"
+                            (change)="fileChangeEvent($event);"
+                        />
+                    </p>
+                    <button type="submit" class="btn btn-response d-block waves-effect waves-ripple" [disabled]="!f.valid">
+                        Añadir módulo
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="response">
+            <h3>Respuesta del servidor</h3>
+            <div *ngIf="alertMessage">
+                <div class="alert alert-primary w-50 d-block m-auto text-center">
+                    {{alertMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!identity">
+    <app-learning-home></app-learning-home>
+</div>
