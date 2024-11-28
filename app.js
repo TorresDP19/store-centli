@@ -30,11 +30,12 @@ app.get('*', (req, res) => {
 
 const
     URLLocalDB = 'mongodb://localhost:27017/fooddayDB',
-    URLInternetDB = 'mongodb+srv://admin:admin@fooddaycluser.tk9zk.mongodb.net/FoodDayCluser?retryWrites=true&w=majority'
+    // URLInternetDB = 'mongodb+srv://admin:admin@fooddaycluser.tk9zk.mongodb.net/FoodDayCluser?retryWrites=true&w=majority'
+    URLInternetDB = 'mongodb+srv://torresdiego609:qZsDua9rKHDGPA8u@store-centli.tgx7u.mongodb.net/'
 ;
 
 mongoose.set("useFindAndModify", false);
-mongoose.connect(URLLocalDB, {useNewUrlParser: true, useUnifiedTopology: true} )
+mongoose.connect(URLInternetDB, {useNewUrlParser: true, useUnifiedTopology: true} )
         .then(db => console.log("---> Conexión con base de datos establecida correctamente..."))
         .catch(err => console.log(err));
 
