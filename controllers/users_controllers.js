@@ -32,8 +32,6 @@ function RegisterAccount(req, res) {
         params.expiration_date
     ) {
 
-        console.log('paramas', params);
-        
         if(params.password) {
 
             bcrypt.hash(params.password, null, null, function(err, hash){
@@ -61,7 +59,7 @@ function RegisterAccount(req, res) {
                     res.status(500).send({ERROR: error.details[0].message});
                 } else {
                     console.log("---> Validación correcta de datos");
-                    let users = new users_model(usersValue);
+                    let users;
                     users.save((errSave, usersStored) => {
                         if(errSave) {
                             console.log("---> ERROR: El correo ingresado ya está en uso");
