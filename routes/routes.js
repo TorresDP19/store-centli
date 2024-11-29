@@ -17,7 +17,7 @@ const
     md_auth = require ('../middlewares/authentication')
 ;
 
-
+app.get('/test-connection', Users_Controllers.TestConnection);
 app.post('/sign-up', Users_Controllers.RegisterAccount);
 app.post('/login', Users_Controllers.LoginAccount);
 

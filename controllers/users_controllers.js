@@ -7,6 +7,11 @@ const
     jwt = require ('../services/jwt');
 ;
 
+function TestConnection(req, res) {
+    console.log('Peticion de prueba: ', req);
+    res.status(200).send('ok')
+}
+
 
 function RegisterAccount(req, res) {
     
@@ -137,5 +142,6 @@ function LoginAccount(req, res) {
 
 module.exports = {
     LoginAccount,
-    RegisterAccount
+    RegisterAccount,
+    TestConnection,
 }
