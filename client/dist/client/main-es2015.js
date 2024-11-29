@@ -1556,8 +1556,8 @@ TutorialComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GLOBAL", function() { return GLOBAL; });
 var GLOBAL = {
-    // url: 'http://localhost:3977'
-    url: 'https://store-centli-4a739e6d5a7a.herokuapp.com'
+    url: 'http://localhost:3977'
+    // url: 'https://store-centli-4a739e6d5a7a.herokuapp.com'
     // https://foodday20.herokuapp.com
     // http://localhost:3977
     // http://www.dominio-prueba.xyz
