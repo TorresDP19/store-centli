@@ -65,9 +65,13 @@ function RegisterAccount(req, res) {
                 } else {
                     console.log("---> Validación correcta de datos");
                     let users = new users_model(usersValue);
+                    console.log('Modelo del usuario creado: ', users);
+                    
                     users.save((errSave, usersStored) => {
+                        console.log('Usuario almacenado: ', usersStored);
+                        
                         if(errSave) {
-                            console.log("---> ERROR: El correo ingresado ya está en uso");
+                            console.log("---> ERROR: Al guardar el usuario: ", errSave);
                             res.status(500).send({ERROR: errSave});
                         } else {
                             if(!usersStored) {
