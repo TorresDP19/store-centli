@@ -8,7 +8,7 @@ const
 ;
 
 function TestConnection(req, res) {
-    console.log('Peticion de prueba: ', req);
+    console.log('Peticion de prueba OK');
     res.status(200).send('ok')
 }
 
