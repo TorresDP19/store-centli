@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of MyProducts; let i = index;" id="{{product._id}}">
-                    <th><img src="{{url + '/get-image-product/' + product.image}}" width="50px" alt=""></th>
+                    <th><img src="{{product.image}}" width="50px" alt=""></th>
                     <td>{{product.productName}}</td>
                     <td class="price">{{product.price | currency}}</td>
                     <td>
