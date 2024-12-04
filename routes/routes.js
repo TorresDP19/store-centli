@@ -11,7 +11,7 @@ const
     Video_Controllers = require ('../controllers/videos_controllers'),
     Quiz_Controllers = require ('../controllers/quiz_controller');
     multipart = require ('connect-multiparty'),
-    md_upload = multipart({uploadDir: './uploads/products'}),
+    md_upload = multipart(); // Elimina el `uploadDir` ya que no guardarás archivos localmente
     md_upload_files = multipart({uploadDir: './uploads/files'}),
     md_upload_videos = multipart({uploadDir: './uploads/videos'}),
     md_auth = require ('../middlewares/authentication')
