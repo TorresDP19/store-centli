@@ -27,6 +27,7 @@
                         *ngFor="let product of products | productFilter:searchTerm"
                         data-aos="fade-down"
                     >
+                    {{ product | json }}
                         <div class="image">
                             <img src="{{ url + '/get-image-product/' + product.image}}" alt="image" class="rounded img-fluid" />
                         </div>

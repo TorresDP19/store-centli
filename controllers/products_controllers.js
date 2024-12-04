@@ -91,9 +91,11 @@ function uploadImage(req, res) {
     var productId = req.params.id;
     var file_name = "El archivo aún no se ha subido...";
 
-    if(req.files) {
+    if (!req.files || !req.files.image) {
+        return res.status(400).send({ message: 'No se ha cargado ningún archivo.' });
+    } else if(req.files) {
         var file_path = req.files.image.path;
-        var file_split = file_path.split('\\');
+        var file_split = file_path.split(process.platform === 'win32' ? '\\' : '/');
         var file_name = file_split[2];
 
         var ext_split = file_name.split('\.');
